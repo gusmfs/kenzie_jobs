@@ -1,0 +1,43 @@
+.btnOutline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  width: 136px;
+  height: 58px;
+  border-radius: 255px;
+  color: var(--Blue);
+  font-family: var(--font-family);
+  background: var(--White);
+  border: 1px solid var(--Blue);
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.btnSolid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  width: 112px;
+  height: 58px;
+  border-radius: 255px;
+  color: var(--White);
+  font-family: var(--font-family);
+  background: var(--Blue);
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.link {
+  color: var(--Blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+}

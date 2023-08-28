@@ -1,0 +1,11 @@
+// Para colocar os imports
+@import url(reset.scss);
+@import url(global.scss);
+@import url(thypografy.scss);
+@import url(forms.scss);
+@import url(buttons.scss);
+
+// para aplicar a font em todo projeto
+body {
+  font-family: var(--font-family);
+}

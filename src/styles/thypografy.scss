@@ -1,0 +1,42 @@
+.title {
+    font-weight: 700;
+    &.one {
+      font-size: 64px;
+      line-height: 78px;
+    }
+    &.two {
+      font-size: 44px;
+      line-height: 64px;
+    }
+  
+    &.tree {
+      font-size: 21px;
+      line-height: 26px;
+    }
+  
+    &.boldAlert {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    &.menu {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  
+    &.paragraphBold {
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+  
+  .paragraph {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+  }
+  
+  .label {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 21px;
+  }
