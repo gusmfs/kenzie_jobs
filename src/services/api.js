@@ -1,1 +1,6 @@
-const parara = 0
+import axios from "axios"
+export const api = axios.create({
+    baseURL: "https://kenzie-job-api.onrender.com/",
+    timeout: 8 * 1000,
+
+})
