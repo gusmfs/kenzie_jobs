@@ -1,6 +1,7 @@
 function App() {
   return (
     <>
+    <button className="btnOutline">poooo</button>
     </>
   )
 }
