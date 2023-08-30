@@ -1,4 +1,3 @@
-
 import { RoutesMain } from "./routes";
 
 const App = () => {
