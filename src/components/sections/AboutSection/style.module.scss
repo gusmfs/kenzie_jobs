@@ -1,6 +1,6 @@
 .about {
-  height: 589px;
-  padding: 50px 0;
+  min-height: 589px;
+  padding: clamp(20px, 5vw, 46px) 0;
 }
 
 .flexBox {

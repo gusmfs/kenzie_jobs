@@ -1,14 +1,14 @@
+import { JobsList } from "../../JobsList";
+import styles from "./style.module.scss";
+
 export const JobsListSection = () => {
   return (
     <>
       <section>
         <div className="container sm">
-          <div>
-            <h2>Confira nossas vagas</h2>
-            <ul>
-              {/* criar um componente JobsList */}
-              <li>{/* criar um componente JobsListCard */}</li>
-            </ul>
+          <div className={styles.flexBox}>
+            <h2 className="title one blue">Confira nossas vagas</h2>
+            <JobsList />
           </div>
         </div>
       </section>

@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { useState } from "react";
 
 export const SearchPage = () =>{
-    const [searchFiltered, setSearchFiltered] = useState(false);
+    // const [searchFiltered, setSearchFiltered] = useState(false);
 
     return(
         <main className="container">
@@ -16,19 +16,19 @@ export const SearchPage = () =>{
                         <MdSearch size={25}/>
                     </button>
                 </form>
-            <div className={styles.filter}>
-                <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">desenvolvedor</strong></h2>
-                <h3 className="title two ">Desculpe :(!</h3>
-                <p className="paragraph">Nenhun resultado encontrado</p>
+                <div className={styles.filter}>
+                    <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">desenvolvedor</strong></h2>
+                    <h3 className="title two ">Desculpe :(!</h3>
+                    <p className="paragraph">Nenhun resultado encontrado</p>
 
-                <ul>
-
-                </ul>
-            </div>
+                    <ul>
+                    </ul>
+                </div>
             </div>
         </main>
     )
 }
+
 
 
 
