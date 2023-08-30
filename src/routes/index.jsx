@@ -5,9 +5,9 @@ import { SearchPage } from "../pages/SearchPage";
 export const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/search" element={<SearchPage />} />
-      {/* <Routes parth="/login" element={}/> */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<SearchPage />} />
+        {/* <Routes parth="/login" element={}/> */}
     </Routes>
   );
 };
