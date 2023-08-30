@@ -1,10 +1,11 @@
 .title {
   font-weight: 700;
+
   &.one {
     font-size: clamp(44px, 5vw, 64px);
-    // line-height: 78px;
     line-height: normal;
   }
+
   &.two {
     font-size: 44px;
     line-height: 64px;
@@ -19,9 +20,18 @@
     font-size: 16px;
     line-height: 19px;
   }
+
   &.menu {
     font-size: 16px;
     line-height: 19px;
+  }
+
+  &.blue {
+    color: var(--Blue);
+  }
+
+  &.white {
+    color: var(--White);
   }
 
   &.paragraphBold {
