@@ -1,7 +1,10 @@
+import { useForm } from "react-hook-form";
 import style from "./style.module.scss";
 import { AiOutlineClose } from "react-icons/ai";
+import { Input } from "../Inputs";
 
 export const ApplyJobModal = () => {
+  const { register, handleSubmit } = useForm({});
   return (
     <aside className={style.modalOverlay} role="dialog">
       <form>
@@ -16,9 +19,10 @@ export const ApplyJobModal = () => {
           <strong> Desenvolvedor Full Stack Jr</strong> em
           <strong> Kenzie Academy Brasil</strong>
         </p>
-        <input className="inputForm" type="text" placeholder="Nome" />
-        <input className="inputForm" type="email" placeholder="E-mail" />
-        <input className="inputForm" type="text" placeholder="Linkedin" />
+        <Input type="text" placeholder="Nome" />
+        <Input type="email" placeholder="E-mail" />
+        <Input type="text" placeholder="Linkedin" />
+
         <button className="btnSolid">Candidatar-se</button>
       </form>
     </aside>
