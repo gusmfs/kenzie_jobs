@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+
 export const JobsListCard = ({ job }) => {
   // formato da vaga
   // {
@@ -15,17 +18,26 @@ export const JobsListCard = ({ job }) => {
   // 	}
   // },
 
+  const [jobDescription, setJobDescription] = useState(false);
+
   return (
     <>
       <li>
         <div>
-          <button>{/* react icon depois */}</button>
-          <button></button>
+          {jobDescription ? (
+            <button onClick={setJobDescription(false)}>
+              <AiOutlineMinus />
+            </button>
+          ) : (
+            <button onClick={setJobDescription(true)}>
+              <AiOutlinePlus />
+            </button>
+          )}
           <div>
             <h3>{job.position}</h3>
-            <p>{job.description}</p>
+            {jobDescription ? <p>{job.description}</p> : null}
           </div>
-          <button>Candidatar-se</button>
+          <button>Candidatar-se</button> {/* ao clicar, abre o modal */}
         </div>
       </li>
     </>
