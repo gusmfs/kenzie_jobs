@@ -1,0 +1,16 @@
+.flexBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  & > button {
+    height: 48px;
+    gap: 45px;
+    color: var(--Blue);
+  }
+}

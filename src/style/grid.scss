@@ -3,7 +3,8 @@
   max-width: 1300px;
   padding: 1rem;
   margin: 0 auto;
-  .sm {
-    max-width: 1100px;
+
+  &.sm {
+    max-width: 1000px;
   }
 }
