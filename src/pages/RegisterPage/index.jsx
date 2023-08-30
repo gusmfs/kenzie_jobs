@@ -1,3 +1,7 @@
 export const RegisterPage = () => {
-  return <></>;
+  return (
+    <>
+      <h1>Register Page</h1>
+    </>
+  );
 };
