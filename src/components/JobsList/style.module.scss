@@ -14,3 +14,15 @@
     color: var(--Blue);
   }
 }
+
+.jobContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.jobContentTop {
+  display: flex;
+  justify-content: space-between;
+}

@@ -11,10 +11,10 @@ export const JobsList = () => {
           <button>
             <AiOutlineMinus size={21} />
           </button>
-          <div>
-            <div>
+          <div className={styles.jobContent}>
+            <div className={styles.jobContentTop}>
               <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
-              <button>Candidatar-se</button>
+              <button className="btnOutline">Candidatar-se</button>
             </div>
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
