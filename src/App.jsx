@@ -1,9 +1,11 @@
-function App() {
+import { RoutesMain } from "./routes";
+
+const App = () => {
   return (
     <>
-    <button className="btnOutline">poooo</button>
+      <RoutesMain />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

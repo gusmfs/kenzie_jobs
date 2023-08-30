@@ -1,0 +1,28 @@
+.flexBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  & > button {
+    height: 48px;
+    gap: 45px;
+    color: var(--Blue);
+  }
+}
+
+.jobContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.jobContentTop {
+  display: flex;
+  justify-content: space-between;
+}

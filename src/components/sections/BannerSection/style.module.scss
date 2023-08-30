@@ -1,0 +1,7 @@
+.banner {
+  height: clamp(253px, 5vw, 278px);
+  display: flex;
+  align-items: center;
+  color: var(--White);
+  background-color: var(--Blue);
+}

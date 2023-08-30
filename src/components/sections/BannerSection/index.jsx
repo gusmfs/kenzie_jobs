@@ -1,9 +1,11 @@
+import styles from "./style.module.scss";
+
 export const BannerSection = () => {
   return (
     <>
-      <section>
+      <section className={styles.banner}>
         <div className="container">
-          <h2>Trabalho é na jobs</h2>
+          <h2 className="title one">Trabalho é na jobs</h2>
         </div>
       </section>
     </>
