@@ -26,8 +26,12 @@
     line-height: normal;
   }
 
+  &.blue {
+    color: var(--Blue);
+  }
 
-  
+  &.white {
+    color: var(--White);
   }
 }
 
