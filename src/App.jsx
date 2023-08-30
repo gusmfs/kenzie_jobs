@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function App() {
     return (
         <>
@@ -5,5 +6,16 @@ function App() {
         </>
     )
 }
+=======
+import { RoutesMain } from "./routes";
 
-export default App
+const App = () => {
+  return (
+    <>
+      <RoutesMain />
+    </>
+  );
+};
+>>>>>>> 73293b20a289a656b55caca299186a80a12bb794
+
+export default App;
