@@ -34,16 +34,16 @@
     color: var(--White);
   }
 
-  &.paragraphBold {
-    font-size: 18px;
-    line-height: normal;
-  }
-}
 
 .paragraph {
   font-size: 18px;
   font-weight: 400;
+
   line-height: normal;
+
+  &.bold {
+    font-weight: 700;
+  }
 }
 
 .label {
