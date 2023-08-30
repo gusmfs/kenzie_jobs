@@ -1,0 +1,48 @@
+.modalOverlay {
+  position: fixed;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  inset: 0;
+  padding: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.199);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 15px;
+    width: 390px;
+    gap: 20px;
+    background: var(--White);
+    @media (min-width: 920px) {
+      width: 460px;
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        color: var(--Blue);
+      }
+      span {
+        font-size: 20px;
+        color: rgba(120, 119, 119, 0.83);
+      }
+    }
+    p {
+      color: var(--Black);
+    }
+    button {
+      position: relative;
+      left: 155px;
+      width: 202px;
+      border: none;
+      @media (min-width: 920px) {
+        position: relative;
+        left: 221px;
+      }
+    }
+  }
+}

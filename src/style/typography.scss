@@ -2,42 +2,41 @@
   font-weight: 700;
   &.one {
     font-size: clamp(44px, 5vw, 64px);
-    // line-height: 78px;
     line-height: normal;
   }
   &.two {
-    font-size: 44px;
-    line-height: 64px;
+    font-size: 35px;
+    line-height: normal;
   }
 
   &.tree {
     font-size: 21px;
-    line-height: 26px;
+    line-height: normal;
   }
 
   &.boldAlert {
     font-size: 16px;
-    line-height: 19px;
+    line-height: normal;
   }
   &.menu {
     font-size: 16px;
-    line-height: 19px;
+    line-height: normal;
   }
 
   &.paragraphBold {
     font-size: 18px;
-    line-height: 36px;
+    line-height: normal;
   }
 }
 
 .paragraph {
   font-size: 18px;
   font-weight: 400;
-  line-height: 36px;
+  line-height: normal;
 }
 
 .label {
   font-size: 17px;
   font-weight: 400;
-  line-height: 21px;
+  line-height: normal;
 }
