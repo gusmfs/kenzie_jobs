@@ -19,7 +19,7 @@ export const SearchPage = () =>{
                 <div className={styles.filter}>
                     <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">desenvolvedor</strong></h2>
                     <h3 className="title two ">Desculpe :(!</h3>
-                    <p className="paragraph">Nenhun resultado encontrado</p>
+                    <p className="paragraph">Nenhum resultado encontrado</p>
 
                     <ul>
                     </ul>
