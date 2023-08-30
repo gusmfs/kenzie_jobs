@@ -20,6 +20,7 @@ export const JobsListCard = ({ job }) => {
       <li>
         <div>
           <button>{/* react icon depois */}</button>
+          <button></button>
           <div>
             <h3>{job.position}</h3>
             <p>{job.description}</p>
