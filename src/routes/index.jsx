@@ -6,7 +6,7 @@ export const RoutesMain = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Routes path="/search" element={<SearchPage />} />
+      <Route path="/search" element={<SearchPage />} />
       {/* <Routes parth="/login" element={}/> */}
     </Routes>
   );
