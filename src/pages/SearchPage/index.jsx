@@ -1,7 +1,6 @@
 import {MdSearch} from "react-icons/md";
 import styles from "./style.module.scss";
 import { useState } from "react";
-import { DefaultContext } from "react-icons/lib/esm";
 import { DefaultTemplate } from "../DefaultTemplate";
 import { JobsList } from "../../components/JobsList";
 
@@ -16,7 +15,7 @@ export const SearchPage = () =>{
                     <p className="title boldAlert ">Digite o que você está procurando:</p>
                     <form>
                         <input type="text" placeholder="Pesquisa"/>
-                        <button className="" type="submit">
+                        <button className={styles.buttonSearch} type="submit">
                             <MdSearch size={25}/>
                         </button>
                     </form>
@@ -24,10 +23,9 @@ export const SearchPage = () =>{
                         <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">desenvolvedor</strong></h2>
                         <h3 className="title two ">Desculpe :(!</h3>
                         <p className="paragraph">Nenhum resultado encontrado</p>
-    
-                        <>
+                        <div className="container sm">
                             <JobsList/>
-                        </>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -35,6 +33,7 @@ export const SearchPage = () =>{
     );
 
 };
+    
 
 
 
