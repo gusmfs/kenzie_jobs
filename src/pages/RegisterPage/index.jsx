@@ -1,8 +1,13 @@
+import { DefaultTemplate } from "../DefaultTemplate";
+
 export const RegisterPage = () => {
   return (
     <>
-      <h1>Register Page</h1>
-      <p>🌞</p>
+      <DefaultTemplate>
+        <main>
+          <h2>Cadastre-se</h2>
+        </main>
+      </DefaultTemplate>
     </>
   );
 };
