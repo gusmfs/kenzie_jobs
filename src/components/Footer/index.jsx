@@ -8,7 +8,6 @@ export const Footer = () => {
           <img src={jobs} alt="logo footer" />
           <p>Todos os direitos reservados - Kenzie Academy Brasil</p>
         </div>
-
       </div>
     </footer>
   )

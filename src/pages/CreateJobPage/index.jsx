@@ -1,24 +1,24 @@
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import { Form } from "../../components/Form";
 import { Input } from "../../components/Inputs";
 import { TextArea } from "../../components/TextArea";
 import { DefaultTemplate } from "../DefaultTemplate";
-import { AiOutlinePlusCircle } from "react-icons/ai";
 import styles from "./style.module.scss";
 
-export const RegisterPage = () => {
+export const CreateJobPage = () => {
   return (
     <>
       <DefaultTemplate>
-        <main className="container xs">
+        <main className="container sm">
           <div className={styles.registerBox}>
-            <h2 className="title one blue center">Cadastre-se</h2>
+            <h2 className="title one blue center">Criar vaga</h2>
             <Form>
-              <Input type="text" placeholder="Nome da empresa" />
-              <Input type="email" placeholder="E-mail" />
-              <Input type="password" placeholder="Senha" />
-              <Input type="password" placeholder="Confirmar senha" />
+              <Input type="text" placeholder="Cargo" />
+              <Input type="text" placeholder="Salário (opcional)" />
+              <TextArea placeholder="Descrição" />
               <button className={`${styles.buttonCreate} btnSolid`}>
-                <span>Cadastrar-se</span>
+                <AiOutlinePlusCircle />
+                <span>Criar Vaga</span>
               </button>
             </Form>
           </div>
