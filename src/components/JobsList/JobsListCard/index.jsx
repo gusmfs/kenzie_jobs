@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import styles from "./style.module.scss";
 
 export const JobsListCard = ({ job }) => {
   // formato da vaga
@@ -22,22 +23,33 @@ export const JobsListCard = ({ job }) => {
 
   return (
     <>
-      <li>
+      <li className={styles.listItem}>
         <div>
           {jobDescription ? (
-            <button onClick={setJobDescription(false)}>
-              <AiOutlineMinus />
+            <button
+              className={styles.buttonDescription}
+              onClick={setJobDescription(false)}
+            >
+              <AiOutlineMinus size={21} />
             </button>
           ) : (
             <button onClick={setJobDescription(true)}>
-              <AiOutlinePlus />
+              <AiOutlinePlus size={21} />
             </button>
           )}
-          <div>
-            <h3>{job.position}</h3>
-            {jobDescription ? <p>{job.description}</p> : null}
+          <div className={styles.jobContent}>
+            <div className={styles.jobContentTop}>
+              <h3 className="paragraph bold">{job.position}</h3>
+              <button className="btnOutline">Candidatar-se</button>
+            </div>
+            <span className="label blue">
+              TEM QUE VER OUTRA REQUISIÇÃO QUE TENHA NA RESPOSTA O NOME DA
+              EMPRESA
+            </span>
+            {jobDescription ? (
+              <p className="paragraph">{job.description}</p>
+            ) : null}
           </div>
-          <button>Candidatar-se</button> {/* ao clicar, abre o modal */}
         </div>
       </li>
     </>
