@@ -15,7 +15,9 @@ export const LoginPage = () => {
             <form>
               <Input type="email" placeholder="E-mail" />
               <Input type="password" placeholder="Senha" />
-              <button className="btnSolid">Entrar</button>
+              <div className={style.btn}>
+                <button className="btnSolid">Entrar</button>
+              </div>
             </form>
             <p className="paragraph">
               Não possui cadastro?{" "}

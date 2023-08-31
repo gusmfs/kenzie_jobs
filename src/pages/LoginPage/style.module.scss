@@ -1,8 +1,8 @@
 .containerLogin {
   display: flex;
   flex-direction: column-reverse;
-  @media (min-width: 420px) {
-    height: 100vh;
+  align-items: center;
+  @media (min-width: 930px) {
     flex-direction: row;
     gap: 6%;
   }
@@ -25,19 +25,21 @@
       color: var(--Blue);
     }
     form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       input {
         margin-top: 30px;
         @media (min-width: 920px) {
           width: 350px;
         }
       }
-      button {
-        position: relative;
-        left: 255px;
-        margin: 15px 0;
+      .btn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 20px 0;
         @media (min-width: 920px) {
-          position: relative;
-          left: 223px;
           margin: 20px 0;
         }
       }
