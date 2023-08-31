@@ -14,31 +14,7 @@ export const DashboardPage = () => {
                     <p className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</p>
                     <div className={styles.dashButtons}>
                         <button className="title boldAlert">Minhas vagas</button>
-
-                        <h2>Minhas vagas</h2>
-                        <button> <AiOutlinePlus/>Criar vaga 
-
-                        </button>
-                        <ul>
-                            <li>
-                                <div>
-                                    <h3>Desenvolvedor Full Stack Jr</h3>
-                                </div>
-                                <button
-                                title="Editar"
-                                    aria-label="edit">
-                                    <MdOutlineEdit size={25} />
-                                </button>
-                                <button 
-                                    title="Remover"
-                                    aria-label="remove">
-                                    <MdOutlineDelete size={25} />
-                                </button>
-                            </li>
-                        </ul>
                         <button className="title boldAlert">Minhas candidaturas</button>
-                        <h2></h2>
-                        <ul></ul>
                     </div>
                 </section>
                 
