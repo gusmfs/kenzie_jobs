@@ -11,7 +11,7 @@ export const DashboardPage = () => {
             <main className="container">
                 <section className={styles.dashboardContainer}>
                     <h1 className="title one">Kenzie Academy Brasil</h1>
-                    <h2 className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</h2>
+                    <p className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</p>
                     <div className={styles.dashButtons}>
                         <button className="title boldAlert">Minhas vagas</button>
 
@@ -36,11 +36,7 @@ export const DashboardPage = () => {
                                 </button>
                             </li>
                         </ul>
-
-
                         <button className="title boldAlert">Minhas candidaturas</button>
-
-                        
                         <h2></h2>
                         <ul></ul>
                     </div>
@@ -50,6 +46,7 @@ export const DashboardPage = () => {
         </DefaultTemplate>
     );
 };
+
 
 
 
