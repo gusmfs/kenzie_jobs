@@ -8,7 +8,7 @@ export const JobsList = () => {
       <ul className={styles.flexBox}>
         {/* <JobsListCard /> */}
         <li className={styles.listItem}>
-          <button>
+          <button className={styles.buttonDescription}>
             <AiOutlineMinus size={21} />
           </button>
           <div className={styles.jobContent}>
@@ -26,7 +26,7 @@ export const JobsList = () => {
           </div>
         </li>
         <li className={styles.listItem}>
-          <button>
+          <button className={styles.buttonDescription}>
             <AiOutlinePlus size={21} />
           </button>
           <div className={styles.jobContent}>
