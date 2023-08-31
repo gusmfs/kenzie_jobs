@@ -1,3 +1,5 @@
+import styles from "./style.module.scss";
+
 export const Form = ({ children }) => {
-  return <form>{children}</form>;
+  return <form className={styles.formBox}>{children}</form>;
 };
