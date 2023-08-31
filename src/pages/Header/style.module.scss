@@ -1,0 +1,13 @@
+.headerPattern{
+  display: flex;
+  align-items: center;
+}
+.headerContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerContent{
+  display: flex;
+  gap: 1rem;
+}
