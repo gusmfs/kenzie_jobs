@@ -1,0 +1,6 @@
+.registerBox {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 5vw, 44px);
+}
