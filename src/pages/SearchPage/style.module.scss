@@ -21,17 +21,8 @@
         
     }
     input{
-        display: flex;
-        width: 100%;
-        border-radius: 255px;
-        justify-content: flex-start;
-        padding: 0 90px;
-        border: 2px solid var(--Blue);
 
-        &:focus {
-            border: 1px solid var(--Blue);
-    
-            }
+        padding: 0 90px;
     
     }
     .buttonSearch{

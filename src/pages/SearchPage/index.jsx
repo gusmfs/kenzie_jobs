@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { useState } from "react";
 import { DefaultTemplate } from "../DefaultTemplate";
 import { JobsList } from "../../components/JobsList";
+import { Input } from "../../components/Inputs";
 
 export const SearchPage = () =>{
     // const [searchFiltered, setSearchFiltered] = useState(false);
@@ -14,7 +15,7 @@ export const SearchPage = () =>{
                     <h1 className="title one">Busca de vagas</h1>
                     <p className="title boldAlert ">Digite o que você está procurando:</p>
                     <form>
-                        <input type="text" placeholder="Pesquisa"/>
+                        <Input type="text" placeholder="Pesquisa"/>
                         <button className={styles.buttonSearch} type="submit">
                             <MdSearch size={25}/>
                         </button>
