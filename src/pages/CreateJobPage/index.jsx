@@ -11,12 +11,12 @@ export const CreateJobPage = () => {
       <DefaultTemplate>
         <main className="container sm">
           <div className={styles.registerBox}>
-            <h2 className="title one blue center">Cadastre-se</h2>
+            <h2 className="title one blue center">Criar vaga</h2>
             <Form>
               <Input type="text" placeholder="Cargo" />
               <Input type="text" placeholder="Salário (opcional)" />
               <TextArea placeholder="Descrição" />
-              <button>
+              <button className={`${styles.buttonCreate} btnSolid`}>
                 <AiOutlinePlusCircle />
                 <span>Criar Vaga</span>
               </button>
