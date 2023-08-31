@@ -10,7 +10,7 @@ export const SearchPage = () =>{
 
     return(
         <DefaultTemplate>
-            <main className="container">
+            <main className="container sm">
                 <div className={styles.searchContainer}>
                     <h1 className="title one">Busca de vagas</h1>
                     <p className="title boldAlert ">Digite o que você está procurando:</p>
@@ -25,7 +25,7 @@ export const SearchPage = () =>{
                         <h3 className="title two ">Desculpe :(!</h3>
                         <p className="paragraph">Nenhum resultado encontrado</p>
                         <div className="container sm">
-                            <JobsList/>
+                            {/* <JobsList/> */}
                         </div>
                     </div>
                 </div>
