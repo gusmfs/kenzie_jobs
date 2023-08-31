@@ -1,29 +1,30 @@
 .btnOutline {
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   align-items: center;
-  padding: 0 25px;
+  padding: 20px 35px;
   height: 32px;
   border-radius: 255px;
   color: var(--Blue);
   font-family: var(--font-family);
-  background: var(--White);
+  background: transparent;
   border: 1px solid var(--Blue);
-
   font-size: 17px;
   font-weight: 700;
   line-height: 21px;
+  transition: all 150ms ease-in-out;
 }
 
-.btnSolid {
+.btnSolid,
+.btnOutline:hover {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   align-items: center;
-  padding: 0 25px;
+  padding: 20px 35px;
   height: 32px;
   border-radius: 255px;
   color: var(--White);

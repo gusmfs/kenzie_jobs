@@ -16,6 +16,7 @@ export const JobsList = () => {
               <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
               <button className="btnOutline">Candidatar-se</button>
             </div>
+            <span className="label blue">Kenzie Academy Brasil</span>
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
               orci nec felis varius pretium. Nam eu diam erat. Sed libero ante,
@@ -34,6 +35,7 @@ export const JobsList = () => {
               <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
               <button className="btnOutline">Candidatar-se</button>
             </div>
+            <span className="label blue">Kenzie Academy Brasil</span>
           </div>
         </li>
       </ul>
