@@ -1,0 +1,17 @@
+.registerBox {
+  height: 73.4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 44px);
+}
+
+.buttonCreate {
+  width: 100% !important;
+
+  @media (min-width: 900px) {
+    width: fit-content !important;
+
+    align-self: flex-end;
+  }
+}

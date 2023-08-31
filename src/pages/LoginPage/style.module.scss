@@ -1,0 +1,57 @@
+.containerLogin {
+  display: flex;
+  flex-direction: column-reverse;
+  @media (min-width: 420px) {
+    height: 100vh;
+    flex-direction: row;
+    gap: 6%;
+  }
+  img {
+    width: 400px;
+    height: 450px;
+    @media (min-width: 920px) {
+      width: 590px;
+      height: 630px;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 920px) {
+      justify-content: center;
+    }
+
+    h2 {
+      color: var(--Blue);
+    }
+    form {
+      input {
+        margin-top: 30px;
+        @media (min-width: 920px) {
+          width: 350px;
+        }
+      }
+      button {
+        position: relative;
+        left: 255px;
+        margin: 15px 0;
+        @media (min-width: 920px) {
+          position: relative;
+          left: 223px;
+          margin: 20px 0;
+        }
+      }
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5%;
+      @media (min-width: 920px) {
+        margin-top: 5%;
+      }
+    }
+    .link {
+      color: var(--Blue);
+    }
+  }
+}
