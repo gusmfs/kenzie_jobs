@@ -1,5 +1,6 @@
 import { Form } from "../../components/Form";
 import { Input } from "../../components/Inputs";
+import { TextArea } from "../../components/TextArea";
 import { DefaultTemplate } from "../DefaultTemplate";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
@@ -13,7 +14,7 @@ export const RegisterPage = () => {
             <Form>
               <Input type="text" placeholder="Cargo" />
               <Input type="text" placeholder="Salário (opcional)" />
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <TextArea placeholder="Descrição" />
               <button>
                 <AiOutlinePlusCircle />
                 <span>Criar Vaga</span>
