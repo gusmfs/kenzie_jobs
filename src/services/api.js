@@ -1,6 +1,6 @@
 import axios from "axios"
 export const api = axios.create({
-    baseURL: "https://kenzie-job-api.onrender.com/",
+    baseURL: "http://localhost:3001/",
     timeout: 8 * 1000,
 
 })

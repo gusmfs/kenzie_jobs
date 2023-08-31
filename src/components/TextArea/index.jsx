@@ -1,8 +1,11 @@
-export const TextArea = ({ label, type, register, disabled, placeholder }) => {
+export const TextArea = ({ register, placeholder }) => {
   return (
     <>
-      <label>{label}</label>
-      <textarea placeholder={placeholder}></textarea>
+      <textarea
+        className="textArea"
+        placeholder={placeholder}
+        {...register}
+      ></textarea>
     </>
   );
 };
