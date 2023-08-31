@@ -3,14 +3,15 @@ import style from "./style.module.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { Input } from "../Inputs";
 
-export const ApplyJobModal = () => {
+export const ApplyJobModal = ({ setIsOpen }) => {
   const { register, handleSubmit } = useForm({});
+
   return (
     <aside className={style.modalOverlay} role="dialog">
       <form>
         <div>
           <h2 className="title two">Candidatar-se</h2>
-          <span>
+          <span onClick={() => setIsOpen(false)}>
             <AiOutlineClose />
           </span>
         </div>
