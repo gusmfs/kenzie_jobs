@@ -15,9 +15,6 @@ export const SearchPage = ({jobs}) =>{
     // const filteredJobs = jobs.filter((job) => {
     //     return job.title.toLowerCase().includes(searchTerm.toLowerCase())
     // })
-
-
-
     return(
         <DefaultTemplate>
             <main className="container sm">
@@ -39,9 +36,10 @@ export const SearchPage = ({jobs}) =>{
                         <h3 className="title two ">Desculpe :(!</h3>
                         <p className="paragraph">Nenhum resultado encontrado</p>
                         ) : (
-                        <div className="container sm">
-                            <JobsList/>
-                        </div>
+                            <div className="container sm">
+                                <JobsList/>
+                            </div>
+                    
                         )} */}
                     </div>
                 </div>
@@ -50,6 +48,9 @@ export const SearchPage = ({jobs}) =>{
     );
     
 };
+
+
+
 
 
 
