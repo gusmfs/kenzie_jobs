@@ -9,16 +9,16 @@ export const RegisterPage = () => {
   return (
     <>
       <DefaultTemplate>
-        <main className="container sm">
+        <main className="container xs">
           <div className={styles.registerBox}>
             <h2 className="title one blue center">Cadastre-se</h2>
             <Form>
-              <Input type="text" placeholder="Cargo" />
-              <Input type="text" placeholder="Salário (opcional)" />
-              <TextArea placeholder="Descrição" />
-              <button>
-                <AiOutlinePlusCircle />
-                <span>Criar Vaga</span>
+              <Input type="text" placeholder="Nome da empresa" />
+              <Input type="email" placeholder="E-mail" />
+              <Input type="password" placeholder="Senha" />
+              <Input type="password" placeholder="Confirmar senha" />
+              <button className={`${styles.buttonCreate} btnSolid`}>
+                <span>Cadastrar-se</span>
               </button>
             </Form>
           </div>
