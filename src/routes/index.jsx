@@ -7,6 +7,7 @@ import { RegisterPage } from "../pages/RegisterPage";
 import { DashboardPage } from "../pages/DashboardPage";
 
 import { CreateJobPage } from "../pages/CreateJobPage";
+import { ErrorPage } from "../pages/ErrorPage";
 
 
 export const RoutesMain = () => {
@@ -16,12 +17,9 @@ export const RoutesMain = () => {
       <Route path="/search" element={<SearchPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-
       <Route path="/dashboard" element={<DashboardPage/>} />
-
-
       <Route path="/create-job" element={<CreateJobPage />} />
-
+      <Route path="/error" element={<ErrorPage />} />
     </Routes>
   );
 };
