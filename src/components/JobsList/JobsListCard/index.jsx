@@ -42,6 +42,10 @@ export const JobsListCard = ({ job }) => {
               <h3 className="paragraph bold">{job.position}</h3>
               <button className="btnOutline">Candidatar-se</button>
             </div>
+            <span className="label blue">
+              TEM QUE VER OUTRA REQUISIÇÃO QUE TENHA NA RESPOSTA O NOME DA
+              EMPRESA
+            </span>
             {jobDescription ? (
               <p className="paragraph">{job.description}</p>
             ) : null}
