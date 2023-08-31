@@ -42,3 +42,8 @@
   font-weight: 700;
   line-height: 22px;
 }
+@media (width < 700px) {
+  .btnSolid{
+    display: none;
+  }
+}
