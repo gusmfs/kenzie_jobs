@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { JobsListCard } from "./JobsListCard";
 import styles from "./style.module.scss";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { ApplyJobModal } from "../ApplyJobModal";
 
 export const JobsList = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
+      {isOpen ? <ApplyJobModal setIsOpen={setIsOpen} /> : null}
       <ul className={styles.flexBox}>
-        {/* <JobsListCard /> */}
+        {/* <JobsListCard setIsOpen={setIsOpen} /> */}
         <li className={styles.listItem}>
           <button className={styles.buttonDescription}>
             <AiOutlineMinus size={21} />
@@ -14,7 +19,9 @@ export const JobsList = () => {
           <div className={styles.jobContent}>
             <div className={styles.jobContentTop}>
               <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
-              <button className="btnOutline">Candidatar-se</button>
+              <button className="btnOutline" onClick={() => setIsOpen(true)}>
+                Candidatar-se
+              </button>
             </div>
             <span className="label blue">Kenzie Academy Brasil</span>
             <p className="paragraph">
@@ -33,9 +40,11 @@ export const JobsList = () => {
           <div className={styles.jobContent}>
             <div className={styles.jobContentTop}>
               <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
-              <button className="btnOutline">Candidatar-se</button>
+              <button className="btnOutline" onClick={() => setIsOpen(true)}>
+                Candidatar-se
+              </button>
             </div>
-            <span className="label blue">Kenzie Academy Brasil</span> 
+            <span className="label blue">Kenzie Academy Brasil</span>
           </div>
         </li>
       </ul>
