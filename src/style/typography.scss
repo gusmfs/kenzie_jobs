@@ -33,6 +33,10 @@
   &.white {
     color: var(--White);
   }
+
+  &.center {
+    text-align: center;
+  }
 }
 .paragraph {
   font-size: 18px;
