@@ -25,6 +25,17 @@ export const JobsList = () => {
             </p>
           </div>
         </li>
+        <li className={styles.listItem}>
+          <button>
+            <AiOutlinePlus size={21} />
+          </button>
+          <div className={styles.jobContent}>
+            <div className={styles.jobContentTop}>
+              <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
+              <button className="btnOutline">Candidatar-se</button>
+            </div>
+          </div>
+        </li>
       </ul>
     </>
   );
