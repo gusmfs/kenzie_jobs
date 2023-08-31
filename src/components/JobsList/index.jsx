@@ -35,7 +35,7 @@ export const JobsList = () => {
               <h3 className="paragraph bold">Desenvolvedor Full Stack Jr</h3>
               <button className="btnOutline">Candidatar-se</button>
             </div>
-            <span className="label blue">Kenzie Academy Brasil</span>
+            <span className="label blue">Kenzie Academy Brasil</span> 
           </div>
         </li>
       </ul>
