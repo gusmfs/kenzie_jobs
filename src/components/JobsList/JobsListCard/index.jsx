@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import styles from "./style.module.scss";
 
-export const JobsListCard = ({ job }) => {
+export const JobsListCard = ({ job, setIsOpen }) => {
   // formato da vaga
   // {
   // 	"userId": 1,
@@ -40,7 +40,9 @@ export const JobsListCard = ({ job }) => {
           <div className={styles.jobContent}>
             <div className={styles.jobContentTop}>
               <h3 className="paragraph bold">{job.position}</h3>
-              <button className="btnOutline">Candidatar-se</button>
+              <button className="btnOutline" onClick={() => setIsOpen(true)}>
+                Candidatar-se
+              </button>
             </div>
             <span className="label blue">
               TEM QUE VER OUTRA REQUISIÇÃO QUE TENHA NA RESPOSTA O NOME DA
