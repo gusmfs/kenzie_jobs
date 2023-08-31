@@ -15,6 +15,7 @@ export const DashboardPage = () => {
                     <p className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</p>
                     <div className={styles.dashButtons}>
                         <button className="title boldAlert">Minhas vagas</button>
+                        <button className="title boldAlert">Minhas candidaturas</button>
                         <ul>
                             <MyJobsSection/>
                         </ul>
