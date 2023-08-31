@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { DefaultTemplate } from "../DefaultTemplate";
 import styles from "./style.module.scss";
 import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
-import { AiOutlinePlus } from "react-icons/ai";
+import {  AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { MyJobsSection } from "../../components/sections/MyJobsSection";
 
 
 export const DashboardPage = () => {
@@ -14,38 +15,41 @@ export const DashboardPage = () => {
                     <p className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</p>
                     <div className={styles.dashButtons}>
                         <button className="title boldAlert">Minhas vagas</button>
-
-                        <h2>Minhas vagas</h2>
-                        <button> <AiOutlinePlus/>Criar vaga 
-
-                        </button>
                         <ul>
-                            <li>
-                                <div>
-                                    <h3>Desenvolvedor Full Stack Jr</h3>
-                                </div>
-                                <button
-                                title="Editar"
-                                    aria-label="edit">
-                                    <MdOutlineEdit size={25} />
-                                </button>
-                                <button 
-                                    title="Remover"
-                                    aria-label="remove">
-                                    <MdOutlineDelete size={25} />
-                                </button>
-                            </li>
+                            <MyJobsSection/>
                         </ul>
-                        <button className="title boldAlert">Minhas candidaturas</button>
-                        <h2></h2>
-                        <ul></ul>
+
                     </div>
                 </section>
-                
+
+                <button className="title boldAlert">Minhas candidaturas</button>
+                    <ul>
+                        <li>
+                            <div>
+                                <h2>José da Silva - Desenvolvedor Full Stack Jr</h2>
+                                <button> 
+                                    <AiOutlineMinus size={21} />
+                                </button>
+                            </div>
+                            <p>Detalhes da candidatura: 
+                                E-mail:josedasilva@email.com
+                            </p>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>Otavio Silva - Desenvolvedor Full Stack Jr</h2>
+                            </div>
+                            <button>
+                                <AiOutlinePlus size={21} />
+                            </button>
+                        </li>
+                    </ul>
             </main>
         </DefaultTemplate>
     );
 };
+
+
 
 
 
