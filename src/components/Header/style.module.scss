@@ -42,10 +42,19 @@
   font-weight: 400;
   line-height: normal;
   font-weight: 700;
+  cursor: pointer;
+
+  p{
+
+    &:hover{
+      color: gray;
+    }
+  }
   &:visited {
     color: black;
     text-decoration-color: none;
   }
+ 
 }
 @media (width < 700px) {
   .linkAcess {

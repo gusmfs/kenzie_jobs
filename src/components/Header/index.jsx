@@ -16,11 +16,9 @@ export const Header = () => {
           <Link className={style.linkAcess} to={"/login"}>
             <p>acesso empresa</p>
           </Link>
-          <Link className="btnSolid">
-            Confira nossas vagas
-          </Link>
+          <Link className="btnSolid">Confira nossas vagas</Link>
           <Link className={style.searchBtn} to={"/search"}>
-            <BsSearch size={20}/>
+            <BsSearch size={20} />
           </Link>
         </div>
       </div>
