@@ -36,11 +36,7 @@ export const DashboardPage = () => {
                                 </button>
                             </li>
                         </ul>
-
-
                         <button className="title boldAlert">Minhas candidaturas</button>
-
-                        
                         <h2></h2>
                         <ul></ul>
                     </div>
@@ -50,6 +46,7 @@ export const DashboardPage = () => {
         </DefaultTemplate>
     );
 };
+
 
 
 
