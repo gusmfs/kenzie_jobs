@@ -8,13 +8,15 @@ import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { InputPassword } from "../../components/InputPassword";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { registerFormSchema } from "./registerJobSchema";
 
 export const RegisterPage = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: zodResolver(registerFormSchema) });
 
   const submit = (formData) => {
     console.log(formData);
@@ -36,13 +38,11 @@ export const RegisterPage = () => {
                   <Input
                     type="text"
                     placeholder="Nome da empresa"
-                    required={true}
                     {...register("name")}
                     error={errors.name}
                   />
                   <Input
                     type="email"
-                    required={true}
                     placeholder="E-mail"
                     {...register("email")}
                     error={errors.email}
@@ -50,14 +50,12 @@ export const RegisterPage = () => {
                   <InputPassword
                     // id="password"
                     placeholder="Senha"
-                    required={true}
                     {...register("password")}
                     error={errors.password}
                   />
                   <InputPassword
                     // id="password"
                     placeholder="Confirmar senha"
-                    required={true}
                     {...register("confirmPassword")}
                     error={errors.confirmPassword}
                   />

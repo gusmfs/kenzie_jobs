@@ -48,12 +48,11 @@
     font-weight: 700;
   }
   &:visited {
-    color:black;
+    color: black;
     text-decoration-color: none;
   }
 }
 @media (width < 700px) {
-  
 }
 .label {
   font-size: 16px;
@@ -62,5 +61,9 @@
 
   &.blue {
     color: var(--Blue);
+  }
+
+  &.red {
+    color: var(--Red);
   }
 }
