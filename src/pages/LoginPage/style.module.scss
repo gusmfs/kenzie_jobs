@@ -1,0 +1,60 @@
+.containerLogin {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+//   height: 100vh;
+  @media (min-width: 930px) {
+    flex-direction: row;
+    gap: 6%;
+  }
+  img {
+    width: 400px;
+    height: 450px;
+    @media (min-width: 920px) {
+      width: 590px;
+      height: 630px;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 920px) {
+      justify-content: center;
+    }
+
+    h2 {
+      color: var(--Blue);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      input {
+        margin-top: 30px;
+        @media (min-width: 920px) {
+          width: 350px;
+        }
+      }
+      .btn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 20px 0;
+        @media (min-width: 920px) {
+          margin: 20px 0;
+        }
+      }
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5%;
+      @media (min-width: 920px) {
+        margin-top: 5%;
+      }
+    }
+    .link {
+      color: var(--Blue);
+    }
+  }
+}

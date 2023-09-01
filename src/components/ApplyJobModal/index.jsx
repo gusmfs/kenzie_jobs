@@ -2,15 +2,20 @@ import { useForm } from "react-hook-form";
 import style from "./style.module.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { Input } from "../Inputs";
+import { Form } from "../Form";
 
-export const ApplyJobModal = () => {
+export const ApplyJobModal = ({ setIsOpen }) => {
   const { register, handleSubmit } = useForm({});
+
+  const submit = (formData) => {
+    console.log(formData);
+  };
   return (
     <aside className={style.modalOverlay} role="dialog">
-      <form>
+      <div className={style.Modal}>
         <div>
           <h2 className="title two">Candidatar-se</h2>
-          <span>
+          <span onClick={() => setIsOpen(false)}>
             <AiOutlineClose />
           </span>
         </div>
@@ -19,12 +24,31 @@ export const ApplyJobModal = () => {
           <strong> Desenvolvedor Full Stack Jr</strong> em
           <strong> Kenzie Academy Brasil</strong>
         </p>
-        <Input type="text" placeholder="Nome" />
-        <Input type="email" placeholder="E-mail" />
-        <Input type="text" placeholder="Linkedin" />
+        <Form handleSubmit={handleSubmit} submit={submit}>
+          <Input
+            type="text"
+            placeholder="Nome"
+            required={true}
+            {...register("name")}
+          />
+          <Input
+            type="email"
+            placeholder="E-mail"
+            required={true}
+            {...register("email")}
+          />
+          <Input
+            type="text"
+            placeholder="Linkedin"
+            required={true}
+            {...register("linkedin")}
+          />
 
-        <button className="btnSolid">Candidatar-se</button>
-      </form>
+          <button className={`${style.btnModal} btnSolid`}>
+            Candidatar-se
+          </button>
+        </Form>
+      </div>
     </aside>
   );
 };

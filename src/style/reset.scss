@@ -13,6 +13,7 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  font-family: var(--font-family);
 }
 
 a {
@@ -22,3 +23,12 @@ a {
 img {
   max-width: 100%;
 }
+@media (width < 700px) {
+  *{
+    overflow-x: hidden;
+  }
+  button{
+    overflow-y: hidden;
+  }
+}
+  

@@ -1,10 +1,31 @@
 .footerContainer{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color: white;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 204px;
+    color: var(--White);
+
+    
+    p{
+        text-align: center;
+    }
+    img{
+        width: 69px;
+    }
+
+    @media (min-width: 800px) {
+        height: 103px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
 }
 .backFooter{
-    background-color: #101119;
-
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    background-color: var(--Black);
+    
 }

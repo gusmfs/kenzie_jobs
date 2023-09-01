@@ -33,6 +33,10 @@
   &.white {
     color: var(--White);
   }
+
+  &.center {
+    text-align: center;
+  }
 }
 .paragraph {
   font-size: 18px;
@@ -43,8 +47,13 @@
   &.bold {
     font-weight: 700;
   }
+  &:visited {
+    color: black;
+    text-decoration-color: none;
+  }
 }
-
+@media (width < 700px) {
+}
 .label {
   font-size: 16px;
   font-weight: 400;
@@ -52,5 +61,9 @@
 
   &.blue {
     color: var(--Blue);
+  }
+
+  &.red {
+    color: var(--Red);
   }
 }

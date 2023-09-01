@@ -1,0 +1,33 @@
+.registerBox {
+  height: 73.4vh;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 5vw, 44px);
+}
+
+.buttonCreate {
+  width: 100% !important;
+
+  @media (min-width: 900px) {
+    width: fit-content !important;
+
+    align-self: flex-end;
+  }
+}
+
+.link {
+  color: var(--Blue);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 5vw, 44px);
+}
