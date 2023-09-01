@@ -6,6 +6,7 @@ import { api } from "../services/api";
 export const JobContext = createContext({})
 export const JobProvider = ({children}) => {
     const [jobs, setJobs] = useState([])
+    const [filteredJobs, setFilteredJobs] = useState([])
     const [ searchJobs, setSearchJobs] = useState("")
 
     const navigate = useNavigate()
@@ -32,7 +33,7 @@ export const JobProvider = ({children}) => {
                             searchJobs : searchJobs
                         }
                     })
-                    setJobs(data)
+                    setFilteredJobs(data)
                 } catch (error) {
                     console.log(error);
                 }
