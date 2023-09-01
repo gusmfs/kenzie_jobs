@@ -1,13 +1,11 @@
-export function Input({ type, register, disabled, placeholder }) {
+import { forwardRef } from "react";
+import styles from "./style.module.scss";
+
+export const Input = forwardRef(({ error, required, ...rest }, ref) => {
   return (
-    <div>
-      <input
-        className="inputForm"
-        type={type}
-        {...register}
-        disabled={disabled}
-        placeholder={placeholder}
-      />
+    <div className={styles.inputContainer}>
+      <input className="inputForm" ref={ref} {...rest} required={required} />
+      {error ? <p className="">{error.message}</p> : null}
     </div>
   );
-}
+});
