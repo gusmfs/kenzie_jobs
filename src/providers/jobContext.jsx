@@ -23,7 +23,6 @@ export const JobProvider = ({children}) => {
             }
         }
         getJobs()
-
     } , [])
 
 
@@ -51,13 +50,15 @@ export const JobProvider = ({children}) => {
 
     const candidateRegister = async (formData) => {
         try {
-            await api.post("/applications")
+            const {data} = await api.post("/applications", formData)
+            setCandidate(data)
         } catch (error) {
             console.log(error);
         }
+        candidateRegister()
     }
     return(
-        <JobContext.Provider value={{jobs,setSearchJobs}}>
+        <JobContext.Provider value={{jobs,setSearchJobs,candidateRegister}}>
             {children}
         </JobContext.Provider>
         
