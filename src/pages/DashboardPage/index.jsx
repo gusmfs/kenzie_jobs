@@ -8,24 +8,34 @@ import {MyJobsApplicantions} from "../../components/sections/MyJobsApplicantions
 
 export const DashboardPage = () => {
     return(
-        <DefaultTemplate>
-            <main className="container">
-                <section className={styles.dashboardContainer}>
-                    <h1 className="title one">Kenzie Academy Brasil</h1>
-                    <p className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</p>
-                    <div className={styles.dashButtons}>
-                        <button className="title boldAlert">Minhas vagas</button>
-                        <button className="title boldAlert">Minhas candidaturas</button>
+
+            <DefaultTemplate>
+                <main className="container">
+                    <section className={styles.dashboardContainer}>
+                        <h1 className="title one">Kenzie Academy Brasil</h1>
+                        <p className="paragraph">Seja bem vindo (a), selecione uma das opções abaixo:</p>
+                        <div className={styles.dashButtons}>
+                            <button className="title boldAlert">Minhas vagas</button>
+                            <button className="title boldAlert">Minhas candidaturas</button>
+                        </div>
+                    </section>
+                    <div className={styles.containerUls}>
                         <ul>
                             <MyJobsSection/>
+                        </ul>
+                        <ul>
                             <MyJobsApplicantions/>
                         </ul>
                     </div>
-                </section>
-            </main>
-        </DefaultTemplate>
+                </main>
+            </DefaultTemplate>
+
     );
 };
+
+
+
+
 
 
 
