@@ -6,7 +6,7 @@ import { api } from "../services/api";
 export const JobContext = createContext({})
 export const JobProvider = ({children}) => {
     const [jobs, setJobs] = useState([])
-    const [ filterJobs, setFilterJobs] = useState([])
+    const [ searchJobs, setSearchJobs] = useState("")
 
     const navigate = useNavigate()
 
@@ -18,24 +18,33 @@ export const JobProvider = ({children}) => {
                 console.log(data);
             } catch (error) {
                 console.log(error);
-                
             }
         }
         getJobs()
 
     } , [])
     useEffect(() => {
-        const filterJobs = async () => {
-            try {
-                const {data} = await api.get("/jobs?position_like=dev")
-                setFilterJobs(data)
-            } catch (error) {
-                console.log(error);
+        const timeout = setTimeout(() => {
+            const filterJobs = async () => {
+                try {
+                    const {data} = await api.get("/jobs?position_like=dev",{
+                        params:{
+                            searchJobs : searchJobs
+                        }
+                    })
+                    setJobs(data)
+                } catch (error) {
+                    console.log(error);
+                }
             }
+            filterJobs()
+        }, 500)
+        return()=>{
+            clearTimeout(timeout)
         }
-    })
+    }, [searchJobs])
     return(
-        <JobContext.Provider value={{jobs}}>
+        <JobContext.Provider value={{jobs,setSearchJobs}}>
             {children}
         </JobContext.Provider>
         
