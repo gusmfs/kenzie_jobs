@@ -3,6 +3,7 @@ import { DefaultTemplate } from "../DefaultTemplate";
 import styles from "./style.module.scss";
 import {  AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { MyJobsSection } from "../../components/sections/MyJobsSection";
+import {MyJobsApplicantions} from "../../components/sections/MyJobsApplicantions";
 
 
 export const DashboardPage = () => {
