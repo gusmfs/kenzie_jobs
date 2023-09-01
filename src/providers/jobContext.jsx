@@ -3,63 +3,59 @@ import { createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 
-export const JobContext = createContext({})
-export const JobProvider = ({children}) => {
-    const [jobs, setJobs] = useState([])
-    const [filteredJobs, setFilteredJobs] = useState([])
-    const [ searchJobs, setSearchJobs] = useState("")
-    const [candidate, setCandidate] = useState([])
+export const JobContext = createContext({});
+export const JobProvider = ({ children }) => {
+  const [jobs, setJobs] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [searchJobs, setSearchJobs] = useState("");
+  const [candidate, setCandidate] = useState([]);
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const getJobs = async() => {
-            try {
-                const {data} = await api.get("/jobs?_expand=user")
-                setJobs(data)
-                console.log(data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getJobs()
+  useEffect(() => {
+    const getJobs = async () => {
+      try {
+        const { data } = await api.get("/jobs?_expand=user");
+        setJobs(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getJobs();
+  }, []);
 
-    } , [])
-
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            const filterJobs = async () => {
-                try {
-                    const {data} = await api.get("/jobs?position_like=dev",{
-                        params:{
-                            searchJobs : searchJobs
-                        }
-                    })
-                    setFilteredJobs(data)
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-            filterJobs()
-        }, 500)
-        return()=>{
-            clearTimeout(timeout)
-        }
-    }, [searchJobs])
-
-
-    const candidateRegister = async (formData) => {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const filterJobs = async () => {
         try {
-            await api.post("/applications")
+          const { data } = await api.get("/jobs?position_like=dev", {
+            params: {
+              searchJobs: searchJobs,
+            },
+          });
+          setFilteredJobs(data);
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
+      };
+      filterJobs();
+    }, 500);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [searchJobs]);
+
+  const candidateRegister = async (formData) => {
+    try {
+      await api.post("/applications");
+    } catch (error) {
+      console.log(error);
     }
-    return(
-        <JobContext.Provider value={{jobs,setSearchJobs}}>
-            {children}
-        </JobContext.Provider>
-        
-    )
-}
+  };
+  return (
+    <JobContext.Provider value={{ jobs, setSearchJobs }}>
+      {children}
+    </JobContext.Provider>
+  );
+};
