@@ -1,0 +1,32 @@
+.containerJobs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    h2{
+        color: var(--Blue);
+    }
+}
+.containerLi{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 120px;
+
+    &:hover{
+        background-color: var(--Lightblue);
+    }
+    
+    span{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        button{
+        color: var(--Blue);
+
+        }
+    }
+}
