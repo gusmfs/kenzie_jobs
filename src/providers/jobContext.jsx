@@ -12,50 +12,55 @@ export const JobProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const getJobs = async () => {
-      try {
-        const { data } = await api.get("/jobs?_expand=user");
-        setJobs(data);
-        console.log(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getJobs();
-  }, []);
+    useEffect(() => {
+        const getJobs = async() => {
+            try {
+                const {data} = await api.get("/jobs?_expand=user")
+                setJobs(data)
+                console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getJobs()
+    } , [])
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const filterJobs = async () => {
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            const filterJobs = async () => {
+                try {
+                    const {data} = await api.get("/jobs?position_like=dev",{
+                        params:{
+                            searchJobs : searchJobs
+                        }
+                    })
+                    setFilteredJobs(data)
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            filterJobs()
+        }, 500)
+        return()=>{
+            clearTimeout(timeout)
+        }
+    }, [searchJobs])
+
+
+    const candidateRegister = async (formData) => {
         try {
-          const { data } = await api.get("/jobs?position_like=dev", {
-            params: {
-              searchJobs: searchJobs,
-            },
-          });
-          setFilteredJobs(data);
+            const {data} = await api.post("/applications", formData)
+            setCandidate(data)
         } catch (error) {
           console.log(error);
         }
-      };
-      filterJobs();
-    }, 500);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [searchJobs]);
-
-  const candidateRegister = async (formData) => {
-    try {
-      await api.post("/applications");
-    } catch (error) {
-      console.log(error);
+        candidateRegister()
     }
-  };
-  return (
-    <JobContext.Provider value={{ jobs, setSearchJobs }}>
-      {children}
-    </JobContext.Provider>
-  );
-};
+    return(
+        <JobContext.Provider value={{jobs,setSearchJobs,candidateRegister}}>
+            {children}
+        </JobContext.Provider>
+        
+    )
+}
