@@ -37,7 +37,7 @@ export const LoginPage = () => {
                 <button className="btnSolid">Entrar</button>
               </div>
             </Form>
-            <form></form>
+         
             <p className="paragraph">
               Não possui cadastro?
               <Link className="link" to="/register">

@@ -10,7 +10,6 @@ export const ApplyJobModal = ({ setIsOpen }) => {
   const submit = (formData) => {
     console.log(formData);
   };
-
   return (
     <aside className={style.modalOverlay} role="dialog">
       <div className={style.Modal}>
@@ -45,7 +44,9 @@ export const ApplyJobModal = ({ setIsOpen }) => {
             {...register("linkedin")}
           />
 
-          <button className="btnSolid">Candidatar-se</button>
+          <button className={`${style.btnModal} btnSolid`}>
+            Candidatar-se
+          </button>
         </Form>
       </div>
     </aside>
