@@ -14,9 +14,7 @@ export const JobsList = () => {
       <ul className={styles.flexBox}>
         {jobs.length > 0 &&
           jobs.map((job) => (
-            <li key={job.id}>
-              <JobsListCard job={job} setIsOpen={setIsOpen} />
-            </li>
+            <JobsListCard job={job} setIsOpen={setIsOpen} key={job.id} />
           ))}
       </ul>
     </>
