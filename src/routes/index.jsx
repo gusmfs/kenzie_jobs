@@ -6,6 +6,9 @@ import { CreateJobPage } from "../pages/CreateJobPage";
 import { DashboardPage } from "../pages/DashboardPage";
 import { HomePage } from "../pages/HomePage";
 import { UpdateJobPage } from "../pages/UpdateJobPage";
+import { ErrorPage } from "../pages/ErrorPage";
+
+
 
 export const RoutesMain = () => {
   return (
@@ -17,6 +20,7 @@ export const RoutesMain = () => {
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/create-job" element={<CreateJobPage />} />
       <Route path="/edit-job" element={<UpdateJobPage />} />
+      <Route path="/error" element={<ErrorPage />} />
     </Routes>
   );
 };

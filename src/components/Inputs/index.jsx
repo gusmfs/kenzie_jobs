@@ -1,4 +1,7 @@
-export function Input({ type, register, disabled, placeholder }) {
+import { forwardRef } from "react";
+import styles from "./style.module.scss";
+
+export const Input = forwardRef(({ error, required, ...rest }, ref) => {
   return (
     <>
       <input
@@ -8,6 +11,10 @@ export function Input({ type, register, disabled, placeholder }) {
         disabled={disabled}
         placeholder={placeholder}
       />
+    <div className={styles.inputContainer}>
+      <input className="inputForm" ref={ref} {...rest} />
+      {error ? <p className="label red">{error.message}</p> : null}
+    </div>
     </>
   );
-}
+});

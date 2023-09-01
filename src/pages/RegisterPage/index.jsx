@@ -6,8 +6,22 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import styles from "./style.module.scss";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { InputPassword } from "../../components/InputPassword";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { registerFormSchema } from "./registerJobSchema";
 
 export const RegisterPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: zodResolver(registerFormSchema) });
+
+  const submit = (formData) => {
+    console.log(formData);
+  };
+
   return (
     <>
       <DefaultTemplate>
@@ -20,11 +34,31 @@ export const RegisterPage = () => {
             <div className="container xs">
               <div className={styles.registerForm}>
                 <h2 className="title one blue center">Cadastre-se</h2>
-                <Form>
-                  <Input type="text" placeholder="Nome da empresa" />
-                  <Input type="email" placeholder="E-mail" />
-                  <Input type="password" placeholder="Senha" />
-                  <Input type="password" placeholder="Confirmar senha" />
+                <Form handleSubmit={handleSubmit} submit={submit}>
+                  <Input
+                    type="text"
+                    placeholder="Nome da empresa"
+                    {...register("name")}
+                    error={errors.name}
+                  />
+                  <Input
+                    type="email"
+                    placeholder="E-mail"
+                    {...register("email")}
+                    error={errors.email}
+                  />
+                  <InputPassword
+                    // id="password"
+                    placeholder="Senha"
+                    {...register("password")}
+                    error={errors.password}
+                  />
+                  <InputPassword
+                    // id="password"
+                    placeholder="Confirmar senha"
+                    {...register("confirmPassword")}
+                    error={errors.confirmPassword}
+                  />
                   <button className={`${styles.buttonCreate} btnSolid`}>
                     <span>Cadastrar-se</span>
                   </button>
