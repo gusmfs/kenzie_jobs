@@ -1,6 +1,6 @@
 export function Input({ type, register, disabled, placeholder }) {
   return (
-    <div>
+    <>
       <input
         className="inputForm"
         type={type}
@@ -8,6 +8,6 @@ export function Input({ type, register, disabled, placeholder }) {
         disabled={disabled}
         placeholder={placeholder}
       />
-    </div>
+    </>
   );
 }
