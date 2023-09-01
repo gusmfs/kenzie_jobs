@@ -36,11 +36,13 @@ export const RegisterPage = () => {
                   <Input
                     type="text"
                     placeholder="Nome da empresa"
+                    required={true}
                     {...register("name")}
                     error={errors.name}
                   />
                   <Input
                     type="email"
+                    required={true}
                     placeholder="E-mail"
                     {...register("email")}
                     error={errors.email}
@@ -48,12 +50,14 @@ export const RegisterPage = () => {
                   <InputPassword
                     // id="password"
                     placeholder="Senha"
+                    required={true}
                     {...register("password")}
                     error={errors.password}
                   />
                   <InputPassword
                     // id="password"
                     placeholder="Confirmar senha"
+                    required={true}
                     {...register("confirmPassword")}
                     error={errors.confirmPassword}
                   />
