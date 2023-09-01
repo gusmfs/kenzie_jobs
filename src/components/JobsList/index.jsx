@@ -3,15 +3,26 @@ import { JobsListCard } from "./JobsListCard";
 import styles from "./style.module.scss";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { ApplyJobModal } from "../ApplyJobModal";
+import { useContext } from "react";
+import { JobContext } from "../../providers/jobContext";
 
 export const JobsList = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const {jobs} = useContext(JobContext)
+  jobs.map(job => console.log(job.position))
   return (
     <>
       {isOpen ? <ApplyJobModal setIsOpen={setIsOpen} /> : null}
       <ul className={styles.flexBox}>
         {/* <JobsListCard setIsOpen={setIsOpen} /> */}
+        {/*<li>{jobs[0].position}</li>*/}
+        
+        {jobs.length > 0 && 
+        jobs.map(job => (
+        <li key={job.id}>{job.position}</li>
+        
+        ))
+        }
         <li className={styles.listItem}>
           <button className={styles.buttonDescription}>
             <AiOutlineMinus size={21} />
