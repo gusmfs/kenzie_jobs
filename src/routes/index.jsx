@@ -5,6 +5,7 @@ import { RegisterPage } from "../pages/RegisterPage";
 import { CreateJobPage } from "../pages/CreateJobPage";
 import { DashboardPage } from "../pages/DashboardPage";
 import { HomePage } from "../pages/HomePage";
+import { ErrorPage } from "../pages/ErrorPage";
 
 
 
@@ -17,6 +18,7 @@ export const RoutesMain = () => {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/dashboard" element={<DashboardPage/>} />
       <Route path="/create-job" element={<CreateJobPage />} />
+      <Route path="/error" element={<ErrorPage />} />
     </Routes>
   );
 };
