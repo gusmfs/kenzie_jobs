@@ -43,7 +43,7 @@
   line-height: normal;
   font-weight: 700;
   cursor: pointer;
-
+  color: var(--Black);
   p{
 
     &:hover{
@@ -54,7 +54,6 @@
     color: black;
     text-decoration-color: none;
   }
- 
 }
 @media (width < 700px) {
   .linkAcess {
@@ -71,6 +70,34 @@
     &:visited {
       color: black;
       text-decoration-color: none;
+      
     }
+  }
+}
+.buttonHeader,.buttonHeader:hover{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  padding: 20px 35px;
+  height: 32px;
+  border-radius: 255px;
+  color: var(--White);
+  font-family: var(--font-family);
+  background: var(--Blue);
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+@media (width < 700px){
+  .buttonHeader{
+    display: none;
   }
 }
