@@ -1,5 +1,6 @@
 .about {
   min-height: 589px;
+  min-height: clamp(512px, 5vw, 589px);
   padding: clamp(20px, 5vw, 46px) 0;
 }
 
