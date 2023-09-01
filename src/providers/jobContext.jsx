@@ -8,6 +8,7 @@ export const JobProvider = ({children}) => {
     const [jobs, setJobs] = useState([])
     const [filteredJobs, setFilteredJobs] = useState([])
     const [ searchJobs, setSearchJobs] = useState("")
+    const [candidate, setCandidate] = useState([])
 
     const navigate = useNavigate()
 
@@ -24,6 +25,8 @@ export const JobProvider = ({children}) => {
         getJobs()
 
     } , [])
+
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             const filterJobs = async () => {
@@ -44,6 +47,15 @@ export const JobProvider = ({children}) => {
             clearTimeout(timeout)
         }
     }, [searchJobs])
+
+
+    const candidateRegister = async (formData) => {
+        try {
+            await api.post("/applications")
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return(
         <JobContext.Provider value={{jobs,setSearchJobs}}>
             {children}
