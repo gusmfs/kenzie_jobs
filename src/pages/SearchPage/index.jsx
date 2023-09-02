@@ -4,13 +4,16 @@ import { useState } from "react";
 import { DefaultTemplate } from "../DefaultTemplate";
 import { JobsList } from "../../components/JobsList";
 import { Input } from "../../components/Inputs";
+import { useForm } from "react-hook-form";
+import { Form } from "react-router-dom";
 
-export const SearchPage = ({jobs}) =>{
+export const SearchPage = () =>{
     const [searchTerm, setSearchTerm] = useState("");
+    const { register, handleSubmit } = useForm();
 
-    // const handleChange = (e) => {
-    //     setSearchTerm(e.target.value);
-    // };
+    const submit = (formData) => {
+        console.log(formData);
+    };
 
     // const filteredJobs = jobs.filter((job) => {
     //     return job.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -21,7 +24,7 @@ export const SearchPage = ({jobs}) =>{
                 <div className={styles.searchContainer}>
                     <h1 className="title one">Busca de vagas</h1>
                     <p className="title boldAlert ">Digite o que você está procurando:</p>
-                    <form>
+                    <Form>
                         <Input type="text" 
                         placeholder="Pesquisa"
                         value={searchTerm}
@@ -29,7 +32,7 @@ export const SearchPage = ({jobs}) =>{
                         <button className={styles.buttonSearch} type="submit">
                             <MdSearch size={25}/>
                         </button>
-                    </form>
+                    </Form>
                     <div className={styles.filter}>
                         {/* <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">{searchTerm}</strong></h2>
                         {filteredJobs.length === 0 ? (
