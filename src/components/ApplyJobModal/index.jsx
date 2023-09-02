@@ -3,13 +3,20 @@ import style from "./style.module.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { Input } from "../Inputs";
 import { Form } from "../Form";
+import { useContext } from "react";
+import { JobContext } from "../../providers/jobContext";
 
 export const ApplyJobModal = ({ setIsOpen }) => {
-  const { register, handleSubmit } = useForm({});
+  const { register, handleSubmit, reset } = useForm({});
+
+  const { candidateRegister } = useContext(JobContext);
 
   const submit = (formData) => {
-    console.log(formData);
+    candidateRegister(formData);
+    setIsOpen(false);
+    reset();
   };
+
   return (
     <aside className={style.modalOverlay} role="dialog">
       <div className={style.Modal}>
