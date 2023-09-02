@@ -3,13 +3,14 @@ import { createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 
-export const JobContext = createContext({})
-export const JobProvider = ({children}) => {
-    const [jobs, setJobs] = useState([])
-    const [filteredJobs, setFilteredJobs] = useState([])
-    const [ searchJobs, setSearchJobs] = useState("")
+export const JobContext = createContext({});
+export const JobProvider = ({ children }) => {
+  const [jobs, setJobs] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [searchJobs, setSearchJobs] = useState("");
+  const [candidate, setCandidate] = useState([]);
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
     useEffect(() => {
         const getJobs = async() => {
@@ -22,8 +23,9 @@ export const JobProvider = ({children}) => {
             }
         }
         getJobs()
-
     } , [])
+
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             const filterJobs = async () => {
@@ -44,8 +46,19 @@ export const JobProvider = ({children}) => {
             clearTimeout(timeout)
         }
     }, [searchJobs])
+
+
+    const candidateRegister = async (formData) => {
+        try {
+            const {data} = await api.post("/applications", formData)
+            setCandidate(data)
+        } catch (error) {
+          console.log(error);
+        }
+        candidateRegister()
+    }
     return(
-        <JobContext.Provider value={{jobs,setSearchJobs}}>
+        <JobContext.Provider value={{jobs,setSearchJobs,candidateRegister}}>
             {children}
         </JobContext.Provider>
         

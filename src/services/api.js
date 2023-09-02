@@ -1,6 +1,5 @@
-import axios from "axios"
+import axios from "axios";
 export const api = axios.create({
-    baseURL: "http://localhost:3001/",
-    timeout: 8 * 1000,
-
-})
+  baseURL: "https://kenzie-jobs.onrender.com",
+  timeout: 8 * 1000,
+});

@@ -1,28 +1,28 @@
-import { AiOutlinePlus } from "react-icons/ai";
-import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import styles from "./style.module.scss";
-
 
 export const MyJobsApplicantions = () => {
     return(
         <section>
-            <h2>Minhas vagas</h2>
-                <button> <AiOutlinePlus/>Criar vaga </button>
-                <li>
+            <h2 className="title one">Minhas Candidaturas</h2>
+                <li className={styles.containerLiMinus}>
                     <div>
-                        <h3>Desenvolvedor Full Stack Jr</h3>
+                        <h3 className="title tree">José da Silva - Desenvolvedor Full Stack Jr</h3>
+                        <button> <AiOutlineMinus size={21} /></button>
                     </div>
-                    <button
-                        title="Editar"
-                        aria-label="edit">
-                        <MdOutlineEdit size={25} />
-                    </button>
-                    <button 
-                        title="Remover"
-                        aria-label="remove">
-                        <MdOutlineDelete size={25} />
-                    </button>
+                    <span>
+                        <p className="paragraph">Detalhes da candidatura:</p>
+                        <p> E-mail: <strong className="title boldAlert">josedasilva@email.com</strong></p>
+                    </span>
+                </li>
+                <li className={styles.containerLiPlus}>
+                    <p className="title tree">Otavio Silva - Desenvolvedor Full Stack Jr</p>
+                    <button><AiOutlinePlus size={21} /></button>
                 </li>
         </section>
-    )
-}
+    );
+};
+
+
+
+
