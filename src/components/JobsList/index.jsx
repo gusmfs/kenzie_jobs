@@ -9,7 +9,8 @@ export const JobsList = ({ list }) => {
     <>
       {isOpen ? <ApplyJobModal setIsOpen={setIsOpen} /> : null}
       <ul className={styles.flexBox}>
-        {list.length > 0 &&
+        {list &&
+          list.length > 0 &&
           list.map((job) => (
             <li key={job.id}>
               <JobsListCard job={job} setIsOpen={setIsOpen} />
