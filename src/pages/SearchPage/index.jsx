@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { Form } from "react-router-dom";
 
 export const SearchPage = () =>{
-    const [searchTerm, setSearchTerm] = useState("");
+    
     const { register, handleSubmit, formState: {errors}, } = useForm();
 
     const submit = (formData) => {
