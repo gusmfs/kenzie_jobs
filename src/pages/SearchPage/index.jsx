@@ -13,7 +13,7 @@ export const SearchPage = () =>{
     const { register, handleSubmit, formState: {errors}, } = useForm();
     console.log(searchJobs)
 
-    const submit = (formData, ) => {
+    const submit = (formData ) => {
         setFilteredJobs(formData);
 
     };
