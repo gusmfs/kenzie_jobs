@@ -9,17 +9,18 @@ import { Form } from "react-router-dom";
 import { JobContext } from "../../providers/jobContext";
 
 export const SearchPage = () =>{
-    const {setSearchJobs, searchJobs} = useContext(JobContext);
+    const {setSearchJobs, searchJobs, setFilteredJobs ,filteredJobs} = useContext(JobContext);
     const { register, handleSubmit, formState: {errors}, } = useForm();
     console.log(searchJobs)
 
     const submit = (formData, ) => {
-        console.log(formData);
+        setFilteredJobs(formData);
+
     };
 
-    const filteredJobs = searchJobs.filter((job) => {
-        return job.position.toLowerCase().includes(searchTerm.toLowerCase())
-    })
+    // const filteredJobs = searchJobs.filter((job) => {
+    //     return job.position.toLowerCase().includes(searchTerm.toLowerCase())
+    // })
     return(
         <DefaultTemplate>
             <main className="container sm">
@@ -39,15 +40,15 @@ export const SearchPage = () =>{
                     </form>
                     <div className={styles.filter}>
                         <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert"></strong></h2>
-                        {filteredJobs.length === 0 ? (
+                        {/* {filteredJobs.length === 0 ? (
                         <h3 className="title two ">Desculpe :(!</h3>
                         <p className="paragraph">Nenhum resultado encontrado</p>
                         ) : (
+                    
+                        )} */}
                             <div className="container sm">
                                 <JobsList list={filteredJobs}/>
                             </div>
-                    
-                        )}
                     </div>
                 </div>
             </main>

@@ -36,6 +36,7 @@ export const JobProvider = ({ children }) => {
                         }
                     })
                     setFilteredJobs(data)
+                    console.log(data)
                 } catch (error) {
                     console.log(error);
                 }
@@ -53,12 +54,12 @@ export const JobProvider = ({ children }) => {
             const {data} = await api.post("/applications", formData)
             setCandidate(data)
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
         candidateRegister()
     }
     return(
-        <JobContext.Provider value={{jobs,setSearchJobs,candidateRegister,filteredJobs, candidate, searchJobs}}>
+        <JobContext.Provider value={{jobs,setSearchJobs,candidateRegister,filteredJobs, candidate, searchJobs, setFilteredJobs}}>
             {children}
         </JobContext.Provider>
         
