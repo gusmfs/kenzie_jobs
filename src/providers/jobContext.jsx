@@ -43,7 +43,6 @@ export const JobProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
-    // candidateRegister()
   };
 
   return (
