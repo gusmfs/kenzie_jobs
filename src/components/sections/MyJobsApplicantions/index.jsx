@@ -5,7 +5,7 @@ export const MyJobsApplicantions = () => {
     return(
         <section>
             <h2 className="title one">Minhas Candidaturas</h2>
-                <li className={styles.containerLiMinus}>
+                {/* <li className={styles.containerLiMinus}>
                     <div>
                         <h3 className="title tree">José da Silva - Desenvolvedor Full Stack Jr</h3>
                         <button> <AiOutlineMinus size={21} /></button>
@@ -18,7 +18,7 @@ export const MyJobsApplicantions = () => {
                 <li className={styles.containerLiPlus}>
                     <p className="title tree">Otavio Silva - Desenvolvedor Full Stack Jr</p>
                     <button><AiOutlinePlus size={21} /></button>
-                </li>
+                </li> */}
         </section>
     );
 };
