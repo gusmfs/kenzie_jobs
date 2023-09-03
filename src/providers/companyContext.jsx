@@ -12,6 +12,7 @@ export const CompanyProvider = ({ children }) => {
   const [editVisible, setEditVisible] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
   const navigate = useNavigate();
+  const token = localStorage.getItem("@TOKEN");
 
   const companyRegister = async (formData) => {
     try {
@@ -39,7 +40,11 @@ export const CompanyProvider = ({ children }) => {
 
   const createJob = async (formData) => {
     try {
-      const { data } = await api.post("/jobs/", formData);
+      const { data } = await api.post("/jobs/", formData, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+      });
       setJobs([...jobs, data]);
     } catch (error) {
       console.log(error);
@@ -48,7 +53,11 @@ export const CompanyProvider = ({ children }) => {
 
   const updateJob = async (formData) => {
     try {
-      const { data } = await api.put(`/jobs/${edit.id}`, formData);
+      const { data } = await api.put(`/jobs/${edit.id}`, formData, {
+        headers:{
+            Authorization: `Bearer ${token}`
+        }
+      });
       const newJob = jobs.map((job) => {
         if (job.id === edit.id) {
           return data;
