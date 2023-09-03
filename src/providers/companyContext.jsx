@@ -50,8 +50,9 @@ export const CompanyProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
+      setJobsCompany([...jobsCompany, data]);
+      console.log(data);
       toast.success("Vaga criada com sucesso! 😄");
-      setJobs([...jobs, data]);
     } catch (error) {
       console.log(error);
     }
@@ -91,7 +92,12 @@ export const CompanyProvider = ({ children }) => {
   useEffect(() => {
     const companyJobs = async () => {
       try {
-        const { data } = await api.get(`users/${companyId}/jobs`);
+        const { data } = await api.get(`users/${companyId}/jobs`, {
+          headers:{
+            Authorization : `Bearer ${token} ` 
+          }
+        });
+        console.log(data);
         setJobsCompany(data);
       } catch (error) {
         console.log(error);
@@ -106,7 +112,7 @@ export const CompanyProvider = ({ children }) => {
         const { data } = await api.get("/jobs/1/applications");
         setApplyCompany(data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     companyApply();
