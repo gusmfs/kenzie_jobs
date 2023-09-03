@@ -12,7 +12,7 @@ export const DashboardPage = () => {
     <DefaultTemplate>
       <main className="container">
         <section className={styles.dashboardContainer}>
-          <h1 className="title one">{user.name}</h1>
+          <h1 className="title one">{user?.name}</h1>
           <p className="paragraph">
             Seja bem vindo (a), selecione uma das opções abaixo:
           </p>
