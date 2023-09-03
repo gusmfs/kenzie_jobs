@@ -19,14 +19,13 @@ export const DashboardPage = () => {
             Seja bem vindo (a), selecione uma das opções abaixo:
           </p>
           <div className={styles.dashButtons}>
-            <button className="title boldAlert">Minhas vagas</button>
+            <Link to="/jobs" className="title boldAlert">
+              Minhas vagas
+            </Link>
             <button className="title boldAlert">Minhas candidaturas</button>
           </div>
         </section>
         <div className={styles.containerUls}>
-          <ul>
-            <MyJobsSection />
-          </ul>
           <ul>
             <MyJobsApplicantions />
           </ul>
