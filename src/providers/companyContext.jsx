@@ -10,6 +10,7 @@ export const CompanyProvider = ({ children }) => {
   const { jobs, setJobs } = useContext(JobContext);
   const [edit, setEdit] = useState(null);
   const [editVisible, setEditVisible] = useState(false);
+  const [editingJob, setEditingJob] = useState(null);
   const navigate = useNavigate();
 
   const companyRegister = async (formData) => {
