@@ -18,7 +18,6 @@ export const JobProvider = ({ children }) => {
       try {
         const { data } = await api.get("/jobs?_expand=user");
         setJobs(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
