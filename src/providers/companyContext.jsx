@@ -2,7 +2,8 @@ import { createContext, useContext, useState } from "react";
 import { api } from "../services/api";
 import { JobContext } from "./jobContext";
 import { useNavigate } from "react-router-dom";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 export const CompanyContext = createContext({});
 export const CompanyProvider = ({ children }) => {
@@ -11,8 +12,11 @@ export const CompanyProvider = ({ children }) => {
   const [edit, setEdit] = useState(null);
   const [editVisible, setEditVisible] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
+  const [jobsCompany, setJobsCompany] = useState([]);
+  const [applyCompany, setApplyCompany] = useState([]);
   const navigate = useNavigate();
   const token = localStorage.getItem("@TOKEN");
+  const companyId = localStorage.getItem("@USERID");
 
   const companyRegister = async (formData) => {
     try {
@@ -32,6 +36,7 @@ export const CompanyProvider = ({ children }) => {
       setUser(data.user);
       localStorage.setItem("@USERID", data.user.id);
       localStorage.setItem("@TOKEN", data.accessToken);
+      toast.success("Login realizado com sucesso 🎉");
       navigate("/dashboard");
     } catch (error) {
       console.log(error);
@@ -42,9 +47,10 @@ export const CompanyProvider = ({ children }) => {
     try {
       const { data } = await api.post("/jobs/", formData, {
         headers: {
-            Authorization: `Bearer ${token}`
-        }
+          Authorization: `Bearer ${token}`,
+        },
       });
+      toast.success("Vaga criada com sucesso! 😄");
       setJobs([...jobs, data]);
     } catch (error) {
       console.log(error);
@@ -54,9 +60,9 @@ export const CompanyProvider = ({ children }) => {
   const updateJob = async (formData) => {
     try {
       const { data } = await api.put(`/jobs/${edit.id}`, formData, {
-        headers:{
-            Authorization: `Bearer ${token}`
-        }
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
       const newJob = jobs.map((job) => {
         if (job.id === edit.id) {
@@ -64,10 +70,11 @@ export const CompanyProvider = ({ children }) => {
         }
         return job;
       });
+      toast.success("Vaga editada com sucesso! 😄");
       setJobs(newJob);
       setEditVisible(false);
     } catch (error) {
-      console.log(error);
+      toast.error("Nao foi possivel editar!");
     }
   };
   const deleteJob = async (deleteId) => {
@@ -75,15 +82,51 @@ export const CompanyProvider = ({ children }) => {
       await api.delete(`/jobs/${deleteId}`);
       const newJobList = jobs.filter((job) => job.id !== deleteId);
       setJobs(newJobList);
+      toast.success("Vaga deletada com sucesso! 😄");
     } catch (error) {
-      console.log(error);
+      toast.error("Nao foi possivel deletar!");
     }
   };
 
-  
+  useEffect(() => {
+    const companyJobs = async () => {
+      try {
+        const { data } = await api.get(`users/${companyId}/jobs`);
+        setJobsCompany(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    companyJobs();
+  }, []);
+
+  useEffect(() => {
+    const companyApply = async () => {
+      try {
+        const { data } = await api.get("/jobs/1/applications");
+        setApplyCompany(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    companyApply();
+  }, []);
+
   return (
     <CompanyContext.Provider
-      value={{ companyRegister, companyLogin, createJob, user, updateJob, editingJob }}
+      value={{
+        companyRegister,
+        companyLogin,
+        createJob,
+        user,
+        updateJob,
+        editingJob,
+        jobsCompany,
+        deleteJob,
+        setEditingJob,
+        editVisible,
+        applyCompany,
+      }}
     >
       {children}
     </CompanyContext.Provider>
