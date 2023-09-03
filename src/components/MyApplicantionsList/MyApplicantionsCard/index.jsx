@@ -14,23 +14,19 @@ export const MyApplicantionsCard = ({job}) => {
     //         "linkedin": "https://www.linkedin.com/in/tsunode"
     //     }
     // ]
-    const { } = useContext(CompanyContext);
+    const {jobsCompany } = useContext(CompanyContext);
     return(
         <>
             <li className={styles.containerLiMinus}>
                 <div>
-                    <h3 className="title tree">José da Silva - Desenvolvedor Full Stack Jr</h3>
+                    <h3 className="title tree">{job.name}</h3>
                     <button> <AiOutlineMinus size={21} /></button>
                 </div>
                 <span>
                     <p className="paragraph">Detalhes da candidatura:</p>
-                    <p> E-mail: <strong className="title boldAlert">josedasilva@email.com</strong></p>
+                    <p> E-mail: <strong className="title boldAlert">{job.email}</strong></p>
                 </span>
-                </li>
-                <li className={styles.containerLiPlus}>
-                    <p className="title tree">Otavio Silva - Desenvolvedor Full Stack Jr</p>
-                    <button><AiOutlinePlus size={21} /></button>
-                </li>
+            </li>
         </>
     );
 };
