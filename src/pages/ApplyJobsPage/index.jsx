@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
-import { MyJobsSection } from "../../components/sections/MyJobsSection";
+import { MyJobsApplicantions } from "../../components/sections/MyJobsApplicantions";
 import { DefaultTemplate } from "../DefaultTemplate";
 import styles from "./style.module.scss";
 
-export const JobsPage = () => {
+export const ApplyJobsPage = () => {
   return (
     <DefaultTemplate>
       <main className="container">
         <div className={styles.dashButtons}>
-          <Link to="/jobs" className="title boldAlert blue">
+          <Link to="/jobs" className="title boldAlert">
             Minhas vagas
           </Link>
-          <Link to="/apply-jobs" className="title boldAlert">
+          <Link to="/apply-jobs" className="title boldAlert blue">
             Minhas candidaturas
           </Link>
         </div>
-        <MyJobsSection />
+        <MyJobsApplicantions />
       </main>
     </DefaultTemplate>
   );
