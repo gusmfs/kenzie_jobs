@@ -56,6 +56,15 @@ export const CompanyProvider = ({children}) => {
             console.log(error);
         }
     }
+    const deleteJob = async (deleteId) => {
+        try {
+            await api.delete(`/jobs/${deleteId}`)
+            const newJobList = jobs.filter(job => job.id !== deleteId)
+            setJobs(newJobList)
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return(
         <CompanyContext.Provider value={{companyRegister, companyLogin, createJob, user, updateJob}}>
             {children}
