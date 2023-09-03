@@ -14,6 +14,8 @@ export const MyApplicantionsCard = ({job}) => {
     //         "linkedin": "https://www.linkedin.com/in/tsunode"
     //     }
     // ]
+    
+    // teste
 
     const { } = useContext(CompanyContext);
 
