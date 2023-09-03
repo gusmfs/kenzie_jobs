@@ -7,6 +7,7 @@ import { Form } from "../../components/Form";
 import styles from "./style.module.scss";
 import { useContext } from "react";
 import { CompanyContext } from "../../providers/companyContext";
+import { useForm } from "react-hook-form";
 
 export const UpdateJobPage = () => {
   // {
@@ -16,7 +17,14 @@ export const UpdateJobPage = () => {
   //   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis orci nec felis varius pretium. Nam eu diam erat. Sed libero ante, finibus id nunc suscipit, sagittis sagittis sem. Nam accumsan, turpis sed consequat tincidunt, nibh odio tincidunt nunc, aliquet sodales sem tortor sed lectus."
   // }
 
-  const { editingJob } = useContext(CompanyContext);
+  const { editingJob, updateJob } = useContext(CompanyContext);
+
+  const { register, handleSubmit } = useForm();
+
+  const submit = (formData) => {
+    console.log(formData);
+    updateJob(formData);
+  };
 
   return (
     <DefaultTemplate>
@@ -31,24 +39,27 @@ export const UpdateJobPage = () => {
               <h2 className="title two blue">
                 Editando: <span>{editingJob?.position}</span>
               </h2>
-              <Form>
+              <Form handleSubmit={handleSubmit} submit={submit}>
                 <div className={styles.divInputs}>
                   <div>
                     <Input
                       type="text"
                       value={editingJob?.position}
                       placeholder="Cargo"
+                      {...register("position")}
                     />
                     <Input
                       type="text"
                       value={editingJob?.sallary}
                       placeholder="Salário (opcional)"
+                      {...register("sallary")}
                     />
                   </div>
 
                   <TextArea
                     value={editingJob?.description}
                     placeholder="Descrição"
+                    {...register("description")}
                   />
                 </div>
 
