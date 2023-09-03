@@ -10,6 +10,8 @@ import { useForm } from "react-hook-form";
 import { InputPassword } from "../../components/InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerJobSchema";
+import { useContext } from "react";
+import { CompanyContext } from "../../providers/companyContext";
 
 export const RegisterPage = () => {
   const {
@@ -18,7 +20,10 @@ export const RegisterPage = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(registerFormSchema) });
 
+  const { companyRegister } = useContext(CompanyContext);
+
   const submit = (formData) => {
+    companyRegister(formData)
     console.log(formData);
   };
 

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
+import { toast } from "react-toastify";
 
 export const JobContext = createContext({});
 export const JobProvider = ({ children }) => {
@@ -40,10 +41,10 @@ export const JobProvider = ({ children }) => {
     try {
       const { data } = await api.post("/applications", formData);
       setCandidate(data);
+      toast.success("UHU");
     } catch (error) {
       console.log(error);
     }
-    // candidateRegister()
   };
 
   return (
