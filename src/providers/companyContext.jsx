@@ -70,9 +70,11 @@ export const CompanyProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+  
   return (
     <CompanyContext.Provider
-      value={{ companyRegister, companyLogin, createJob, user, updateJob }}
+      value={{ companyRegister, companyLogin, createJob, user, updateJob, editingJob }}
     >
       {children}
     </CompanyContext.Provider>
