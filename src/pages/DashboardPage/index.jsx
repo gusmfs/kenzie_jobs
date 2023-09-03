@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { DefaultTemplate } from "../DefaultTemplate";
 import styles from "./style.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { MyJobsSection } from "../../components/sections/MyJobsSection";
-import { MyJobsApplicantions } from "../../components/sections/MyJobsApplicantions";
 import { useContext } from "react";
 import { CompanyContext } from "../../providers/companyContext";
 
@@ -22,14 +20,11 @@ export const DashboardPage = () => {
             <Link to="/jobs" className="title boldAlert">
               Minhas vagas
             </Link>
-            <button className="title boldAlert">Minhas candidaturas</button>
+            <Link to="/apply-jobs" className="title boldAlert">
+              Minhas candidaturas
+            </Link>
           </div>
         </section>
-        <div className={styles.containerUls}>
-          <ul>
-            <MyJobsApplicantions />
-          </ul>
-        </div>
       </main>
     </DefaultTemplate>
   );
