@@ -8,7 +8,7 @@ export const JobsListSection = () => {
 
   return (
     <>
-      <section>
+      <section id="jobsSection">
         <div className="container sm">
           <div className={styles.flexBox}>
             <h2 className="title one blue">Confira nossas vagas</h2>

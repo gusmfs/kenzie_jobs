@@ -5,7 +5,7 @@ export const BannerSection = () => {
     <>
       <section className={styles.banner}>
         <div className="container">
-          <h2 className="title one">Trabalho é na jobs</h2>
+          <h2 className={`title one ${styles.bannerTitle}`}>Trabalho é na jobs</h2>
         </div>
       </section>
     </>
