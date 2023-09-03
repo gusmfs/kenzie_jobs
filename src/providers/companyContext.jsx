@@ -7,6 +7,8 @@ export const CompanyContext = createContext({});
 export const CompanyProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const {jobs, setJobs} = useContext(JobContext)
+    const [edit, setEdit] = useState(null)
+    const [editVisible, setEditVisible] = useState(false)
     const navigate = useNavigate()
 
     const companyRegister = async (formData) => {
@@ -38,8 +40,24 @@ export const CompanyProvider = ({children}) => {
             console.log(error);
         }
     }
+
+    const updateJob = async (formData) => {
+        try {
+            const {data} = await api.put(`/jobs/${edit.id}`,formData)
+            const newJob = jobs.map(job => {
+                if(job.id === edit.id) {
+                    return data
+                } return job
+            })
+            setJobs(newJob)
+            setEditVisible(false)
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return(
-        <CompanyContext.Provider value={{companyRegister, companyLogin, createJob, user}}>
+        <CompanyContext.Provider value={{companyRegister, companyLogin, createJob, user, updateJob}}>
             {children}
         </CompanyContext.Provider>
     )
