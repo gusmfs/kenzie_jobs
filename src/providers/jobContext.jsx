@@ -18,7 +18,6 @@ export const JobProvider = ({ children }) => {
       try {
         const { data } = await api.get("/jobs?_expand=user");
         setJobs(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -41,7 +40,7 @@ export const JobProvider = ({ children }) => {
     try {
       const { data } = await api.post("/applications", formData);
       setCandidate(data);
-      toast.success("UHU");
+      toast.success("Candidatura registrada com sucesso 🤞🏻🎉");
     } catch (error) {
       console.log(error);
     }

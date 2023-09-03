@@ -14,13 +14,11 @@ export const LoginPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const submit = (formData) => {
-    console.log(formData)
-    companyLogin(formData)
-  }
-
+    companyLogin(formData);
+  };
 
   return (
     <DefaultTemplate>
@@ -29,7 +27,7 @@ export const LoginPage = () => {
           <img src={imgLogin} alt="" />
           <div>
             <h2 className="title two">Faça login</h2>
-            <form onSubmit={handleSubmit(submit)}>
+            <Form handleSubmit={handleSubmit} submit={submit}>
               <Input
                 type="email"
                 placeholder="E-mail"
@@ -45,8 +43,7 @@ export const LoginPage = () => {
               <div className={style.btn}>
                 <button className="btnSolid">Entrar</button>
               </div>
-            </form>
-
+            </Form>
             <p className="paragraph">
               Não possui cadastro?
               <Link className="link" to="/register">

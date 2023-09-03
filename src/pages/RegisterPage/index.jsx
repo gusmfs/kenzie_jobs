@@ -1,8 +1,6 @@
 import { Form } from "../../components/Form";
 import { Input } from "../../components/Inputs";
-import { TextArea } from "../../components/TextArea";
 import { DefaultTemplate } from "../DefaultTemplate";
-import { AiOutlinePlusCircle } from "react-icons/ai";
 import styles from "./style.module.scss";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -17,14 +15,15 @@ export const RegisterPage = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: zodResolver(registerFormSchema) });
 
   const { companyRegister } = useContext(CompanyContext);
 
   const submit = (formData) => {
-    companyRegister(formData)
-    console.log(formData);
+    companyRegister(formData);
+    reset();
   };
 
   return (
@@ -34,7 +33,7 @@ export const RegisterPage = () => {
           <div className={styles.registerBox}>
             <Link to={"/login"} className={styles.link}>
               <BiArrowBack />
-              <span class="paragraph bold">voltar</span>
+              <span className="paragraph bold">voltar</span>
             </Link>
             <div className="container xs">
               <div className={styles.registerForm}>
@@ -53,13 +52,11 @@ export const RegisterPage = () => {
                     error={errors.email}
                   />
                   <InputPassword
-                    // id="password"
                     placeholder="Senha"
                     {...register("password")}
                     error={errors.password}
                   />
                   <InputPassword
-                    // id="password"
                     placeholder="Confirmar senha"
                     {...register("confirmPassword")}
                     error={errors.confirmPassword}
