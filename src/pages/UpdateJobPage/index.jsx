@@ -46,7 +46,10 @@ export const UpdateJobPage = () => {
                     />
                   </div>
 
-                  <TextArea placeholder="Descrição" />
+                  <TextArea
+                    value={editingJob?.description}
+                    placeholder="Descrição"
+                  />
                 </div>
 
                 <button className={`${styles.buttonEdit} btnSolid`}>
