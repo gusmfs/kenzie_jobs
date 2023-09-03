@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { api } from "../services/api";
 import { JobContext } from "./jobContext";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify"
 
 export const CompanyContext = createContext({});
 export const CompanyProvider = ({ children }) => {
