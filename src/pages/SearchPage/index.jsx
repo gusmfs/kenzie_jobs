@@ -42,9 +42,9 @@ export const SearchPage = () => {
                         </button>
                     </form>
                     <div className={styles.filter}>
-                        <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">{searchTerm}</strong></h2>
-                        {filteredJobs.length === 0  && searchTerm !== "" ?  (
+                        {searchTerm !== "" && filteredJobs.length === 0 ? (
                             <>
+                            <h2 className="paragraph strong">Resultados de busca para: <strong className="title boldAlert">{searchTerm}</strong></h2>
                                 <h3 className="title two ">Desculpe ! 🥺</h3>
                                 <p className="paragraph">Nenhum resultado encontrado</p>
                             </>
