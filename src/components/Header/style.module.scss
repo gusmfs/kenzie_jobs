@@ -44,9 +44,8 @@
   font-weight: 700;
   cursor: pointer;
   color: var(--Black);
-  p{
-
-    &:hover{
+  p {
+    &:hover {
       color: gray;
     }
   }
@@ -70,11 +69,12 @@
     &:visited {
       color: black;
       text-decoration-color: none;
-      
     }
   }
 }
-.buttonHeader,.buttonHeader:hover{
+
+.buttonHeader,
+.buttonHeader:hover {
   width: fit-content;
   display: flex;
   align-items: center;
@@ -96,8 +96,8 @@
   }
 }
 
-@media (width < 700px){
-  .buttonHeader{
+@media (width < 700px) {
+  .buttonHeader {
     display: none;
   }
 }
