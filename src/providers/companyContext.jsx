@@ -12,7 +12,7 @@ export const CompanyProvider = ({children}) => {
     const companyRegister = async (formData) => {
         try {
             await api.post("/users",formData)
-
+            navigate("/login")
         } catch (error) {
             console.log(error);
         }

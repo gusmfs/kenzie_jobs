@@ -1,12 +1,11 @@
+
 .footerContainer{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    height: 204px;
     color: var(--White);
-
     
     p{
         text-align: center;
@@ -23,9 +22,9 @@
     
 }
 .backFooter{
+    margin-top: 10vh;
     display: flex;
     align-items: center;
     padding: 0 50px;
     background-color: var(--Black);
-    
 }
