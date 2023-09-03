@@ -41,7 +41,7 @@ export const JobProvider = ({ children }) => {
     try {
       const { data } = await api.post("/applications", formData);
       setCandidate(data);
-      toast.success("UHU");
+      toast.success("Candidatura registrada com sucesso 🤞🏻🎉");
     } catch (error) {
       console.log(error);
     }
