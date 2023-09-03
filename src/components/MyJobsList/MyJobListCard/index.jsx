@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
+import { useContext } from "react";
+import { CompanyContext } from "../../../providers/companyContext";
 
 export const MyJobListCard = ({ job }) => {
   // {
@@ -8,6 +10,10 @@ export const MyJobListCard = ({ job }) => {
   //   "sallary": 3400,
   //   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis orci nec felis varius pretium. Nam eu diam erat. Sed libero ante, finibus id nunc suscipit, sagittis sagittis sem. Nam accumsan, turpis sed consequat tincidunt, nibh odio tincidunt nunc, aliquet sodales sem tortor sed lectus."
   // }
+
+  const { setEditingJob } = useContext(CompanyContext);
+
+  setEditingJob(job);
 
   return (
     <>
