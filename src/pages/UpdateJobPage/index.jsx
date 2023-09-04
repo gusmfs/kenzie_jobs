@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { DefaultTemplate } from "../DefaultTemplate";
 import { BiArrowBack } from "react-icons/bi";
 import { Input } from "../../components/Inputs";
 import { TextArea } from "../../components/TextArea";
@@ -8,6 +7,7 @@ import styles from "./style.module.scss";
 import { useContext } from "react";
 import { CompanyContext } from "../../providers/companyContext";
 import { useForm } from "react-hook-form";
+import { DefaultTemplatePrivate } from "../DefaultTemplatePrivate";
 
 export const UpdateJobPage = () => {
   // {
@@ -27,7 +27,7 @@ export const UpdateJobPage = () => {
   };
 
   return (
-    <DefaultTemplate>
+    <DefaultTemplatePrivate>
       <main className="container">
         <div className={styles.editBox}>
           <Link className={styles.link}>
@@ -71,6 +71,6 @@ export const UpdateJobPage = () => {
           </div>
         </div>
       </main>
-    </DefaultTemplate>
+    </DefaultTemplatePrivate>
   );
 };

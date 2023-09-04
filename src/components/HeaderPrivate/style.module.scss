@@ -1,0 +1,48 @@
+.headerContent{
+  display: flex;
+  justify-content: space-between;
+}
+.headerStyle{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.headerButtonLogout{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 35px;
+  height: 32px;
+  border-radius: 255px;
+  color: var(--Blue);
+  font-family: var(--font-family);
+  background: transparent;
+  border: 1px solid var(--Blue);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+  &:visited {
+    color: var(--Blue);
+    text-decoration-color: none;
+  }
+}
+.headerName{
+  width: 2.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  height: 41px;
+  border-radius: 100%;
+  color: var(--White);
+  font-family: var(--font-family);
+  background: var(--Blue);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+}

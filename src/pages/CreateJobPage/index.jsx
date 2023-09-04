@@ -9,16 +9,17 @@ import { BiArrowBack } from "react-icons/bi";
 import { useContext } from "react";
 import { CompanyContext } from "../../providers/companyContext";
 import { useForm } from "react-hook-form";
+import { DefaultTemplatePrivate } from "../DefaultTemplatePrivate";
 
 export const CreateJobPage = () => {
-  const {createJob} = useContext(CompanyContext)
-  const {register, handleSubmit} = useForm()
+  const { createJob } = useContext(CompanyContext);
+  const { register, handleSubmit } = useForm();
   const submit = (formData) => {
-    createJob(formData)
-  }
+    createJob(formData);
+  };
   return (
     <>
-      <DefaultTemplate>
+      <DefaultTemplatePrivate>
         <main className="container">
           <div className={styles.registerBox}>
             <Link className={styles.link}>
@@ -29,18 +30,18 @@ export const CreateJobPage = () => {
               <div className={styles.registerForm}>
                 <h2 className="title one blue center">Criar vaga</h2>
                 <form onSubmit={handleSubmit(submit)}>
-                <Input
-                type="text"
-                placeholder="Cargo"
-                required={true}
-                {...register("email")}
-              />
                   <Input
-                type="text"
-                placeholder="Salario(optional)"
-                required={true}
-                {...register("sallary")}
-              />
+                    type="text"
+                    placeholder="Cargo"
+                    required={true}
+                    {...register("email")}
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Salario(optional)"
+                    required={true}
+                    {...register("sallary")}
+                  />
                   <TextArea placeholder="Descrição" />
                   <button className={`${styles.buttonCreate} btnSolid`}>
                     <AiOutlinePlusCircle />
@@ -51,7 +52,7 @@ export const CreateJobPage = () => {
             </div>
           </div>
         </main>
-      </DefaultTemplate>
+      </DefaultTemplatePrivate>
     </>
   );
 };
