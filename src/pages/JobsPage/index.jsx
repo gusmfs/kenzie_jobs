@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { MyJobsSection } from "../../components/sections/MyJobsSection";
-import { DefaultTemplate } from "../DefaultTemplate";
+
 import styles from "./style.module.scss";
+import { DefaultTemplatePrivate } from "../DefaultTemplatePrivate";
 
 export const JobsPage = () => {
   return (
-    <DefaultTemplate>
+    <DefaultTemplatePrivate>
       <main className="container">
         <div className={styles.dashButtons}>
           <Link to="/jobs" className="title boldAlert blue">
@@ -17,6 +18,6 @@ export const JobsPage = () => {
         </div>
         <MyJobsSection />
       </main>
-    </DefaultTemplate>
+    </DefaultTemplatePrivate>
   );
 };
