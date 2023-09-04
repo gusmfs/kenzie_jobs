@@ -14,9 +14,9 @@ export const JobsList = ({ list }) => {
         {list &&
           list.length > 0 &&
           list.map((job) => (
-            <li key={job.id}>
-              <JobsListCard job={job} setIsOpen={setIsOpen} />
-            </li>
+            
+              <JobsListCard job={job} key={job.id} setIsOpen={setIsOpen} />
+            
           ))}
       </ul>
     </>
