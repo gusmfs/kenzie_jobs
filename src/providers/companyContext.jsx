@@ -50,7 +50,7 @@ export const CompanyProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      setJobsCompany([...jobsCompany, data]);
+      setJobsCompany( data);
       console.log(data);
       toast.success("Vaga criada com sucesso! 😄");
     } catch (error) {
@@ -71,9 +71,9 @@ export const CompanyProvider = ({ children }) => {
         }
         return job;
       });
-      toast.success("Vaga editada com sucesso! 😄");
       setJobsCompany(newJob);
       setEditVisible(false);
+      toast.success("Vaga editada com sucesso! 😄");
     } catch (error) {
       toast.error("Nao foi possivel editar!");
     }
@@ -103,7 +103,7 @@ export const CompanyProvider = ({ children }) => {
           }
         });
         console.log(data);
-        setJobsCompany([...jobsCompany,data]);
+        setJobsCompany([data, ...jobsCompany]);
       } catch (error) {
         console.log(error);
       }

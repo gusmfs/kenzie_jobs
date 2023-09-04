@@ -7,6 +7,7 @@ import { JobContext } from "../../providers/jobContext";
 import { ApplyJobModal } from "../../components/ApplyJobModal";
 
 export const HomePage = () => {
+  const {jobs} = useContext(JobContext)
   return (
     <>
       <DefaultTemplate>
