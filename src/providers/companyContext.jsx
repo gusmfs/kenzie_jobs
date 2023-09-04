@@ -80,11 +80,16 @@ export const CompanyProvider = ({ children }) => {
   };
   const deleteJob = async (deleteId) => {
     try {
-      await api.delete(`/jobs/${deleteId}`);
-      const newJobList = jobsCompany.filter((job) => job.id !== deleteId);
-      setJobs(newJobList);
+      await api.delete(`/jobs/${deleteId}`,{
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      const newJobList = jobsCompany.filter(job => job.id !== deleteId);
+      setJobsCompany(newJobList);
       toast.success("Vaga deletada com sucesso! 😄");
     } catch (error) {
+      console.log(error)
       toast.error("Nao foi possivel deletar!");
     }
   };
