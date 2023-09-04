@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
+import { toast } from "react-toastify";
 
 
 export const JobContext = createContext({});
@@ -16,7 +17,7 @@ export const JobProvider = ({ children }) => {
   useEffect(() => {
     const getJobs = async () => {
       try {
-        const { data } = await api.get("/jobs?_expand=user");
+        const { data } = await api.get("/jobs");
         setJobs(data);
       } catch (error) {
         console.log(error);

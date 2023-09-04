@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { MyJobsApplicantions } from "../../components/sections/MyJobsApplicantions";
 import styles from "./style.module.scss";
 import { DefaultTemplatePrivate } from "../DefaultTemplatePrivate";
+import { MyApply } from "../../components/sections/MyApply";
+import { MyApplySection } from "../../components/sections/MyApplySection";
 
 export const ApplyJobsPage = () => {
   return (
@@ -15,7 +16,7 @@ export const ApplyJobsPage = () => {
             Minhas candidaturas
           </Link>
         </div>
-        <MyJobsApplicantions />
+        <MyApplySection/>
       </main>
     </DefaultTemplatePrivate>
   );
