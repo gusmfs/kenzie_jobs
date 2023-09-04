@@ -72,7 +72,7 @@ export const CompanyProvider = ({ children }) => {
         return job;
       });
       toast.success("Vaga editada com sucesso! 😄");
-      setJobs(newJob);
+      setJobsCompany(newJob);
       setEditVisible(false);
     } catch (error) {
       toast.error("Nao foi possivel editar!");
@@ -81,7 +81,7 @@ export const CompanyProvider = ({ children }) => {
   const deleteJob = async (deleteId) => {
     try {
       await api.delete(`/jobs/${deleteId}`);
-      const newJobList = jobs.filter((job) => job.id !== deleteId);
+      const newJobList = jobsCompany.filter((job) => job.id !== deleteId);
       setJobs(newJobList);
       toast.success("Vaga deletada com sucesso! 😄");
     } catch (error) {
@@ -98,7 +98,7 @@ export const CompanyProvider = ({ children }) => {
           }
         });
         console.log(data);
-        setJobsCompany(data);
+        setJobsCompany([...jobsCompany,data]);
       } catch (error) {
         console.log(error);
       }
@@ -109,8 +109,12 @@ export const CompanyProvider = ({ children }) => {
   useEffect(() => {
     const companyApply = async () => {
       try {
-        const { data } = await api.get("/jobs/1/applications");
-        setApplyCompany(data);
+        const { data } = await api.get("/jobs/1/applications",{
+          headers: {
+            Authorization: `Bearer ${token} ` 
+          }
+        });
+        setApplyCompany([...applyCompany,data]);
       } catch (error) {
         console.log(error);
       }
