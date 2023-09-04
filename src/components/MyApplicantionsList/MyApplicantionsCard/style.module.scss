@@ -1,13 +1,12 @@
-.containerLiMinus{
-    padding: 40px;
-    height: 260px;
+.containerLiMinus{    padding: 0 30px;
+    height: 20%;
+    
     div{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 100%;
         
-        
-        margin-bottom: 25px;
     }
 
     span{
@@ -36,4 +35,8 @@
         background-color: var(--Lightblue);
     }
 
+}
+.inside{
+    display: flex;
+    gap: 8px;
 }

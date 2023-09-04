@@ -21,7 +21,7 @@ export const CreateJobPage = () => {
       <DefaultTemplate>
         <main className="container">
           <div className={styles.registerBox}>
-            <Link className={styles.link}>
+            <Link to={"/jobs"} className={styles.link}>
               <BiArrowBack />
               <span class="paragraph bold">voltar</span>
             </Link>
