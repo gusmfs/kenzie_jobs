@@ -39,7 +39,7 @@ export const CompanyProvider = ({ children }) => {
       toast.success("Login realizado com sucesso 🎉");
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      toast.error("Nao foi possivel fazer login, email ou senha incorreta")
     }
   };
 
@@ -51,7 +51,6 @@ export const CompanyProvider = ({ children }) => {
         },
       });
       setJobsCompany( data);
-      console.log(data);
       toast.success("Vaga criada com sucesso! 😄");
     } catch (error) {
       console.log(error);
@@ -97,8 +96,7 @@ export const CompanyProvider = ({ children }) => {
             Authorization : `Bearer ${token} ` 
           }
         });
-        console.log(data);
-        setJobsCompany([data, ...jobsCompany]);
+        setJobsCompany(jobsCompany);
       } catch (error) {
         console.log(error);
       }
