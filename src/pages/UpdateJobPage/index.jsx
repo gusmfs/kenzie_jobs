@@ -18,11 +18,17 @@ export const UpdateJobPage = () => {
   // }
 
   const { editingJob, updateJob } = useContext(CompanyContext);
-
-  const { register, handleSubmit } = useForm();
+  console.log(editingJob)
+  const { register, handleSubmit } = useForm({
+    values:{
+      position:editingJob.position,
+      sallary:editingJob.sallary,
+      description:editingJob.description
+    }
+  });
+  
 
   const submit = (formData) => {
-    console.log(formData);
     updateJob(formData);
   };
 
@@ -44,20 +50,17 @@ export const UpdateJobPage = () => {
                   <div>
                     <Input
                       type="text"
-                      value={editingJob?.position}
                       placeholder="Cargo"
                       {...register("position")}
                     />
                     <Input
                       type="text"
-                      value={editingJob?.sallary}
                       placeholder="Salário (opcional)"
                       {...register("sallary")}
                     />
                   </div>
 
                   <TextArea
-                    value={editingJob?.description}
                     placeholder="Descrição"
                     {...register("description")}
                   />

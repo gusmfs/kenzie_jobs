@@ -1,11 +1,11 @@
-export const TextArea = ({ register, placeholder }) => {
+import { forwardRef } from "react";
+
+export const TextArea = forwardRef(({ ...rest},ref) => {
   return (
-    <>
       <textarea
         className="textArea"
-        placeholder={placeholder}
-        {...register}
+        ref={ref}
+        {...rest}
       ></textarea>
-    </>
   );
-};
+});

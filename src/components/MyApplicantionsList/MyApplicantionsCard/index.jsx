@@ -6,7 +6,6 @@ import { CompanyContext } from "../../../providers/companyContext";
 
 export const MyApplicantionsCard = ({job}) => {
     const { deleteJob } = useContext(CompanyContext);
-    console.log(deleteJob)
     return(
         <>
             <li className={styles.containerLiMinus}>

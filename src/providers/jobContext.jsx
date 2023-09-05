@@ -17,7 +17,7 @@ export const JobProvider = ({ children }) => {
   useEffect(() => {
     const getJobs = async () => {
       try {
-        const { data } = await api.get("/jobs?_expand=user");
+        const { data } = await api.get("/jobs");
         setJobs(data);
       } catch (error) {
         console.log(error);

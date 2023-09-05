@@ -5,7 +5,7 @@ import { CompanyContext } from "../../providers/companyContext";
 import style from "./style.module.scss"
 export const HeaderPrivate = () => {
   const { user } = useContext(CompanyContext);
-  console.log(user)
+  
   const firstTwoInitials = (string) => {
     const stringParts = string.split(" ");
     let initials = "";
@@ -20,7 +20,6 @@ export const HeaderPrivate = () => {
     return initials.toUpperCase();
   };
   firstTwoInitials(user.name)
-  console.log(firstTwoInitials(user.name))
   return (
     <header className="container">
       <div className={style.headerContent}>

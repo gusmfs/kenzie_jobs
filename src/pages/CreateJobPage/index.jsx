@@ -34,7 +34,7 @@ export const CreateJobPage = () => {
                     type="text"
                     placeholder="Cargo"
                     required={true}
-                    {...register("email")}
+                    {...register("position")}
                   />
                   <Input
                     type="text"
@@ -42,7 +42,7 @@ export const CreateJobPage = () => {
                     required={true}
                     {...register("sallary")}
                   />
-                  <TextArea placeholder="Descrição" />
+                  <TextArea {...register("description")} placeholder="Descrição" />
                   <button className={`${styles.buttonCreate} btnSolid`}>
                     <AiOutlinePlusCircle />
                     <span>Criar Vaga</span>

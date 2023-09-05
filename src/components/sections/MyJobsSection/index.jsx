@@ -6,6 +6,7 @@ import { CompanyContext } from "../../../providers/companyContext";
 import { MyApplicantionsList } from "../../MyApplicantionsList";
 import { MyJobsApplicantions } from "../MyJobsApplicantions";
 import styles from "./style.module.scss";
+import { MyJobList } from "../../MyJobsList";
 
 export const MyJobsSection = () => {
   return (
@@ -18,7 +19,7 @@ export const MyJobsSection = () => {
         </Link>
       </div>
       <div>
-        <MyJobsApplicantions/>
+        <MyJobList />
       </div>
       
     </section>

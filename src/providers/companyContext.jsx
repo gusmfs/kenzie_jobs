@@ -9,7 +9,6 @@ export const CompanyContext = createContext({});
 export const CompanyProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const { jobs, setJobs } = useContext(JobContext);
-  const [edit, setEdit] = useState(null);
   const [editVisible, setEditVisible] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
   const [jobsCompany, setJobsCompany] = useState([]);
@@ -45,12 +44,14 @@ export const CompanyProvider = ({ children }) => {
 
   const createJob = async (formData) => {
     try {
-      const { data } = await api.post("/jobs/", formData, {
+      const newJob = {...formData,userId:user.id}
+      const { data } = await api.post("/jobs/", newJob, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      setJobsCompany(...jobsCompany, data);
+      setJobsCompany([...jobsCompany, data]);
+      navigate("/jobs")
       toast.success("Vaga criada com sucesso! 😄");
     } catch (error) {
       console.log(error);
@@ -59,19 +60,21 @@ export const CompanyProvider = ({ children }) => {
 
   const updateJob = async (formData) => {
     try {
-      const { data } = await api.put(`/jobs/${edit.id}`, formData, {
+      const { data } = await api.put(`/jobs/${editingJob.id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      const newJob = jobs.map((job) => {
-        if (job.id === edit.id) {
+      const newJob = jobsCompany.map((job) => {
+        if (job.id === editingJob.id) {
           return data;
         }
         return job;
       });
       setJobsCompany(newJob);
       setEditVisible(false);
+      setEditingJob(null)
+      navigate("/jobs")
       toast.success("Vaga editada com sucesso! 😄");
     } catch (error) {
       toast.error("Nao foi possivel editar!");
@@ -96,18 +99,21 @@ export const CompanyProvider = ({ children }) => {
   useEffect(() => {
     const companyJobs = async () => {
       try {
-        const { data } = await api.get(`users/${companyId}/jobs`, {
+        const { data } = await api.get(`users/${user.id}/jobs`, {
           headers:{
             Authorization : `Bearer ${token} ` 
           }
         });
+        console.log(data)
         setJobsCompany(data);
       } catch (error) {
         console.log(error);
       }
     };
-    companyJobs();
-  }, []);
+    if (user) {
+      companyJobs();
+    }
+  }, [user]);
 
   useEffect(() => {
     const companyApply = async () => {
