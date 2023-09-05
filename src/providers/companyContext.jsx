@@ -117,7 +117,7 @@ export const CompanyProvider = ({ children }) => {
             Authorization: `Bearer ${token} ` 
           }
         });
-        setApplyCompany([...applyCompany,data]);
+        setApplyCompany(applyCompany);
       } catch (error) {
         console.log(error);
       }
