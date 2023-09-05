@@ -6,34 +6,53 @@ import { DefaultTemplate } from "../DefaultTemplate";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { useContext } from "react";
+import { CompanyContext } from "../../providers/companyContext";
+import { useForm } from "react-hook-form";
+import { DefaultTemplatePrivate } from "../DefaultTemplatePrivate";
 
 export const CreateJobPage = () => {
+  const { createJob } = useContext(CompanyContext);
+  const { register, handleSubmit } = useForm();
+  const submit = (formData) => {
+    createJob(formData);
+  };
   return (
     <>
-      <DefaultTemplate>
+      <DefaultTemplatePrivate>
         <main className="container">
           <div className={styles.registerBox}>
-            <Link className={styles.link}>
+            <Link to={"/jobs"} className={styles.link}>
               <BiArrowBack />
               <span class="paragraph bold">voltar</span>
             </Link>
             <div className="container xs">
               <div className={styles.registerForm}>
                 <h2 className="title one blue center">Criar vaga</h2>
-                <Form>
-                  <Input type="text" placeholder="Cargo" />
-                  <Input type="text" placeholder="Salário (opcional)" />
-                  <TextArea placeholder="Descrição" />
+                <form onSubmit={handleSubmit(submit)}>
+                  <Input
+                    type="text"
+                    placeholder="Cargo"
+                    required={true}
+                    {...register("position")}
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Salario(optional)"
+                    required={true}
+                    {...register("sallary")}
+                  />
+                  <TextArea {...register("description")} placeholder="Descrição" />
                   <button className={`${styles.buttonCreate} btnSolid`}>
                     <AiOutlinePlusCircle />
                     <span>Criar Vaga</span>
                   </button>
-                </Form>
+                </form>
               </div>
             </div>
           </div>
         </main>
-      </DefaultTemplate>
+      </DefaultTemplatePrivate>
     </>
   );
 };

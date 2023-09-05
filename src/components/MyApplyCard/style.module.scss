@@ -1,0 +1,42 @@
+.containerLiMinus{    padding: 0 30px;
+    height: 20%;
+    
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        
+    }
+
+    span{
+        max-width: 350px ;
+        p{
+        padding: 0 40px;
+        height: 55px;
+        align-items: center;
+
+        
+        }
+    }
+    &:hover{
+        background-color: var(--Lightblue);
+    }
+}
+.containerLiPlus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    margin-bottom: 25px;
+    height: 118px;
+
+    &:hover{
+        background-color: var(--Lightblue);
+    }
+
+}
+.inside{
+    display: flex;
+    gap: 8px;
+}

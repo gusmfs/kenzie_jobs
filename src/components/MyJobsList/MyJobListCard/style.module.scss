@@ -1,0 +1,21 @@
+.containerLi {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 120px;
+
+  &:hover {
+    background-color: var(--Lightblue);
+  }
+
+  span {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    button {
+      color: var(--Blue);
+    }
+  }
+}

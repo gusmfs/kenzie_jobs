@@ -16,7 +16,9 @@ export const Header = () => {
           <Link className={style.linkAcess} to={"/login"}>
             <p>acesso empresa</p>
           </Link>
-          <Link className={style.buttonHeader}>Confira nossas vagas</Link>
+          <a href="/#jobsSection" className={style.buttonHeader}>
+            Confira nossas vagas
+          </a>
           <Link className={style.searchBtn} to={"/search"}>
             <BsSearch size={20} />
           </Link>

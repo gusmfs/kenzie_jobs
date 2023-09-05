@@ -5,12 +5,19 @@ import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 import { Form } from "../../components/Form";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { CompanyContext } from "../../providers/companyContext";
 
 export const LoginPage = () => {
-  const { register, handleSubmit } = useForm();
+  const { companyLogin } = useContext(CompanyContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const submit = (formData) => {
-    console.log(formData);
+    companyLogin(formData);
   };
 
   return (
@@ -37,7 +44,6 @@ export const LoginPage = () => {
                 <button className="btnSolid">Entrar</button>
               </div>
             </Form>
-         
             <p className="paragraph">
               Não possui cadastro?
               <Link className="link" to="/register">

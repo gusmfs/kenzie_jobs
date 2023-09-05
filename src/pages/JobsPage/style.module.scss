@@ -1,0 +1,12 @@
+.dashButtons {
+  display: flex;
+  gap: 30px;
+
+  button:hover {
+    color: var(--Blue);
+  }
+}
+
+a:visited {
+  color: var(--Black);
+}
