@@ -50,7 +50,7 @@ export const CompanyProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      setJobsCompany( data);
+      setJobsCompany(...jobsCompany, data);
       toast.success("Vaga criada com sucesso! 😄");
     } catch (error) {
       console.log(error);
@@ -101,7 +101,7 @@ export const CompanyProvider = ({ children }) => {
             Authorization : `Bearer ${token} ` 
           }
         });
-        setJobsCompany(jobsCompany);
+        setJobsCompany(data);
       } catch (error) {
         console.log(error);
       }
