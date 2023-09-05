@@ -24,7 +24,7 @@ export const HeaderPrivate = () => {
   return (
     <header className="container">
       <div className={style.headerContent}>
-        <img src={jobs} alt="Logo Kenzie Jobs" />
+      <Link to={"/"} ><img src={jobs} alt="Logo" /></Link>
       <div className={style.headerStyle}>
         <p className={style.headerName} >{firstTwoInitials(user.name)}</p>
         <Link className={style.headerButtonLogout} to={"/login"}>Sair</Link>
