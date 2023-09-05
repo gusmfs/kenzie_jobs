@@ -1,5 +1,5 @@
 import axios from "axios";
 export const api = axios.create({
-  baseURL: "https://kenzie-jobs.onrender.com",
+  baseURL: "https://kenziejob.onrender.com",
   timeout: 8 * 1000,
 });

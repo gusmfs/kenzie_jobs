@@ -7,8 +7,7 @@ export const MyApplicantionsList = () => {
     console.log(jobsCompany)
     return(
         <ul className={style.ul}>
-            {jobsCompany.map(job => <MyApplicantionsCard key={job.id} job={job}/>
- )}
+            {jobsCompany.map(job => <MyApplicantionsCard key={job.id} job={job}/>)}
         </ul>
     );
 };
