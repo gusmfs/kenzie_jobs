@@ -37,15 +37,17 @@ export const JobProvider = ({ children }) => {
     }
   };
 
-  const candidateRegister = async (formData) => {
+  const candidateRegister = async (formData, jobId, userId) => {
     try {
-      const { data } = await api.post("/applications", formData);
-      setCandidate(data);
+      const newApply = {...formData, jobId, userId}
+      console.log(formData);
+       await api.post("/applications", newApply);
+
        toast.success("Candidatura registrada com sucesso 🤞🏻🎉");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
   return (
     <JobContext.Provider
@@ -56,6 +58,7 @@ export const JobProvider = ({ children }) => {
         searchJobs,
         filterJobs,
         filteredJobs,
+        candidate
       }}
     >
       {children}
