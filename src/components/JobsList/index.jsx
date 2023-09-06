@@ -6,16 +6,16 @@ import { useContext } from "react";
 import { JobContext } from "../../providers/jobContext";
 
 export const JobsList = ({ list }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [applyingJob, setApplyingJob] = useState(false);
   return (
     <>
-      {isOpen ? <ApplyJobModal setIsOpen={setIsOpen} /> : null}
+      {applyingJob ? <ApplyJobModal setApplyingJob={setApplyingJob} applyingJob={applyingJob} /> : null}
       <ul className={styles.flexBox}>
         {list &&
           list.length > 0 &&
           list.map((job) => (
             
-              <JobsListCard job={job} key={job.id} setIsOpen={setIsOpen} />
+              <JobsListCard job={job} key={job.id} setApplyingJob={setApplyingJob} />
             
           ))}
       </ul>

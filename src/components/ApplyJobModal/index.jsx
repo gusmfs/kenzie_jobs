@@ -6,14 +6,14 @@ import { Form } from "../Form";
 import { useContext } from "react";
 import { JobContext } from "../../providers/jobContext";
 
-export const ApplyJobModal = ({ setIsOpen }) => {
+export const ApplyJobModal = ({ setApplyingJob, applyingJob }) => {
   const { register, handleSubmit, reset } = useForm({});
-
+  console.log(applyingJob)
   const { candidateRegister } = useContext(JobContext);
 
-  const submit = (formData) => {
-    candidateRegister(formData);
-    setIsOpen(false);
+  const submit = async (formData) => {
+    await candidateRegister(formData, applyingJob.id, applyingJob.userId);
+    setApplyingJob(null);
     reset();
   };
 
@@ -22,7 +22,7 @@ export const ApplyJobModal = ({ setIsOpen }) => {
       <div className={style.Modal}>
         <div>
           <h2 className="title two">Candidatar-se</h2>
-          <span onClick={() => setIsOpen(false)}>
+          <span onClick={() => setApplyingJob(null)}>
             <AiOutlineClose />
           </span>
         </div>

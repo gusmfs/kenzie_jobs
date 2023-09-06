@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import styles from "./style.module.scss";
 
-export const JobsListCard = ({ job, setIsOpen }) => {
+export const JobsListCard = ({ job, setApplyingJob }) => {
   const [jobDescription, setJobDescription] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ export const JobsListCard = ({ job, setIsOpen }) => {
         <div className={styles.jobContent}>
           <div className={styles.jobContentTop}>
             <h3 className="paragraph bold">{job.position}</h3>
-            <button className="btnOutline" onClick={() => setIsOpen(true)}>
+            <button className="btnOutline" onClick={() => setApplyingJob(job)}>
               Candidatar-se
             </button>
           </div>

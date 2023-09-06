@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export const CompanyContext = createContext({});
 export const CompanyProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const { jobs, setJobs } = useContext(JobContext);
+  const { jobs, setJobs, candidate } = useContext(JobContext);
   const [editVisible, setEditVisible] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
   const [jobsCompany, setJobsCompany] = useState([]);
@@ -118,19 +118,22 @@ export const CompanyProvider = ({ children }) => {
   useEffect(() => {
     const companyApply = async () => {
       try {
-        const { data } = await api.get("/jobs/1/applications",{
+        const { data } = await api.get(`/applications?userId=${user.id}&_expand=job`,{
           headers: {
             Authorization: `Bearer ${token} ` 
           }
         });
-        setApplyCompany(applyCompany);
+        setApplyCompany(data);
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
     };
-    companyApply();
-  }, []);
-
+    if(user){
+      companyApply();
+    }
+  }, [user]);
+console.log(applyCompany);
   return (
     <CompanyContext.Provider
       value={{
