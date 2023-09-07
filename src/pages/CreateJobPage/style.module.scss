@@ -31,3 +31,8 @@
   flex-direction: column;
   gap: clamp(30px, 5vw, 44px);
 }
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

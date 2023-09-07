@@ -29,7 +29,7 @@ export const CreateJobPage = () => {
             <div className="container xs">
               <div className={styles.registerForm}>
                 <h2 className="title one blue center">Criar vaga</h2>
-                <form onSubmit={handleSubmit(submit)}>
+                <form onSubmit={handleSubmit(submit)} className={styles.formContainer}>
                   <Input
                     type="text"
                     placeholder="Cargo"
