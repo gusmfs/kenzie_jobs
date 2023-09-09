@@ -2,10 +2,10 @@ import { useContext } from "react";
 import jobs from "../../assets/jobs.svg";
 import { Link } from "react-router-dom";
 import { CompanyContext } from "../../providers/companyContext";
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 export const HeaderPrivate = () => {
   const { user } = useContext(CompanyContext);
-  
+
   const firstTwoInitials = (string) => {
     const stringParts = string.split(" ");
     let initials = "";
@@ -19,15 +19,21 @@ export const HeaderPrivate = () => {
 
     return initials.toUpperCase();
   };
-  firstTwoInitials(user.name)
+  firstTwoInitials(user.name);
   return (
-    <header className="container">
-      <div className={style.headerContent}>
-      <Link to={"/"} ><img src={jobs} alt="Logo" /></Link>
-      <div className={style.headerStyle}>
-        <p className={style.headerName} >{firstTwoInitials(user.name)}</p>
-        <Link className={style.headerButtonLogout} to={"/login"}>Sair</Link>
-      </div>
+    <header className={style.headerContainer}>
+      <div className="container">
+        <div className={style.headerContent}>
+          <Link to={"/"}>
+            <img src={jobs} alt="Logo" />
+          </Link>
+          <div className={style.headerStyle}>
+            <p className={style.headerName}>{firstTwoInitials(user.name)}</p>
+            <Link className={style.headerButtonLogout} to={"/login"}>
+              Sair
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );

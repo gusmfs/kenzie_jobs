@@ -10,17 +10,17 @@ export const DashboardPage = () => {
 
   return (
     <DefaultTemplatePrivate>
-      <main className="container">
-        <section className={styles.dashboardContainer}>
+      <main  className={styles.dashboardContainer}>
+        <section className="container">
           <h1 className="title one">{user?.name}</h1>
           <p className="paragraph">
             Seja bem vindo (a), selecione uma das opções abaixo:
           </p>
           <div className={styles.dashButtons}>
-            <Link to="/jobs" className="title boldAlert">
+            <Link to="/jobs" className={`title boldAlert ${styles.myJobs}`}>
               Minhas vagas
             </Link>
-            <Link to="/apply-jobs" className="title boldAlert">
+            <Link to="/apply-jobs" className={`title boldAlert ${styles.myApplies}`}>
               Minhas candidaturas
             </Link>
           </div>

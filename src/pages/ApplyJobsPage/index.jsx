@@ -12,7 +12,7 @@ export const ApplyJobsPage = () => {
           <Link to="/jobs" className="title boldAlert">
             Minhas vagas
           </Link>
-          <Link to="/apply-jobs" className="title boldAlert blue">
+          <Link to="/apply-jobs" className={`title boldAlert ${styles.myApplies}`}>
             Minhas candidaturas
           </Link>
         </div>
