@@ -1,5 +1,5 @@
 
-.footerContainer{
+.footerContent{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,16 +16,19 @@
     }
 
     @media (min-width: 800px) {
-        height: 103px;
+        /*height: 103px;*/
         flex-direction: row;
         justify-content: space-between;
     }
     
 }
 .backFooter{
-    margin-top: 10vh;
     display: flex;
+    height: 10vh;
     align-items: center;
-    padding: 0 50px;
+   /* padding: 0 50px;*/
     background-color: var(--Black);
 }
+/*.footerContainer{
+    height: 10vh;
+}*/

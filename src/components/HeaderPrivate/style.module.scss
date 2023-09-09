@@ -15,8 +15,10 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 20px 35px;
-  height: 32px;
+  // height: 32px;
+  // min-height: 10vh;
+  height: 35px;
+  padding: 10px 20px;
   border-radius: 255px;
   color: var(--Blue);
   font-family: var(--font-family);
@@ -25,10 +27,6 @@
   font-size: 17px;
   font-weight: 700;
   line-height: 21px;
-  &:visited {
-    color: var(--Blue);
-    text-decoration-color: none;
-  }
 }
 .headerName{
   width: 2.5625rem;
@@ -45,4 +43,8 @@
   font-size: 17px;
   font-weight: 700;
   line-height: 21px;
+}
+.headerContainer{
+  width: 100%;
+  min-height: 10vh;
 }

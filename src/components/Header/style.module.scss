@@ -1,9 +1,11 @@
+.header{
+  height: 10vh;
+}
 .headerPattern {
   display: flex;
   align-items: center;
 }
 .headerContainer {
-  height: 5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +25,7 @@
     align-items: center;
   }
   .headerContainer {
-    height: 100px;
+    /*height: 100px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,10 +51,7 @@
       color: gray;
     }
   }
-  &:visited {
-    color: black;
-    text-decoration-color: none;
-  }
+
 }
 @media (width < 700px) {
   .linkAcess {
@@ -66,10 +65,6 @@
     font-weight: 400;
     line-height: normal;
     font-weight: 700;
-    &:visited {
-      color: black;
-      text-decoration-color: none;
-    }
   }
 }
 
